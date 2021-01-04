@@ -4,3 +4,10 @@
 <li><%= @destination.state %></li>
 <li><%= @destination.country %></li>
 <li><%= image_tag(@destination.picture_link, size: "300x300") %></li>
+
+<h3> All events</h3>
+
+<% @destination.events.each do |event|%>
+  <li><%= event.name%> - Price: <%= event.price%></li>
+  <%= button_to "Add to Itinerary", new_event_entry_path, method: :get%>
+<%end%>
