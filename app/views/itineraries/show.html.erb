@@ -1,0 +1,10 @@
+<h1><%= @itinerary.name %></h1>
+<hr/>
+
+<% @itinerary.entries.each do |entry| %>
+<%= link_to entry.destination.name, destination_path(entry.destination) %>
+<% end %>
+</br>
+<%= button_to "Add Event", new_event_entry_path, method: :get %>
+<hr/>
+<%= button_to "Add Destination", new_entry_path, method: :get %>

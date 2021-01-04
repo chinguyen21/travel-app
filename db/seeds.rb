@@ -5,5 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Destination.destroy_all
 
-
+d1 = Destination.create(name: "McDonald Observatory", city: "Fort Davis", state: "Texas", country: "United States", picture_link: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fnews.rice.edu%2Ffiles%2F2016%2F05%2F0525_PLANET-UTMcD-233-lg-15kwd14.jpg&f=1&nofb=1")
