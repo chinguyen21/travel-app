@@ -1,0 +1,26 @@
+
+
+
+
+<h1> Create account </h1>
+
+<% if flash[:errors]%>
+  <% flash[:errors].each do |error|%>
+  <li style="color: red"><%= error%></li>
+  <%end%>
+<%end %>
+
+<%= form_for @user do |f|%>
+<%= f.label :name%>
+<%= f.text_field :name%><br>
+<%= f.label :age%>
+<%= f.number_field :age%><br>
+<%= f.label :email%>
+<%= f.email_field :email%><br>
+<%= f.label :password%>
+<%= f.password_field :password%><br>
+<%= f.label :password_confirmation%>
+<%= f.password_field :password_confirmation%><br><br>
+<%= f.submit "Create account"%>
+
+<%end%>
