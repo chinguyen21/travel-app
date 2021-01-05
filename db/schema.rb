@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_04_211405) do
+ActiveRecord::Schema.define(version: 2021_01_05_204651) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_01_04_211405) do
     t.integer "itinerary_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "visited", default: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -61,9 +62,9 @@ ActiveRecord::Schema.define(version: 2021_01_04_211405) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_destinations", force: :cascade do |t|
+  create_table "user_events", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "destination_id"
+    t.integer "event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

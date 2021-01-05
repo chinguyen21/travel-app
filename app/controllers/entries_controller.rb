@@ -16,8 +16,16 @@ class EntriesController < ApplicationController
         end
     end
 
+    def edit 
+        @entry = Entry.find(params[:id])
+    end
+
+    def update 
+        @entry = Entry.find(params[:id]).update(visited: true)
+    end
+
     private
     def entry_params
-        params.require(:entry).permit(:event_id, :date, :itinerary_id)
+        params.require(:entry).permit(:event_id, :date, :itinerary_id, :visited)
     end
 end

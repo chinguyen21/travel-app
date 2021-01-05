@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-    has_many :user_destinations
-    has_many :destinations, through: :user_destinations
+    has_many :user_events
+    has_many :events, through: :user_events
+    has_many :destinations, through: :events
     has_many :itineraries
     has_many :favorites
     has_many :reviews

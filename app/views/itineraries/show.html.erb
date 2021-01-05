@@ -1,16 +1,25 @@
 <h1><%= @itinerary.name %></h1>
 <hr/>
 
-<% @itinerary.destinations.uniq.each do |d|%>
+<% entries = @itinerary.entries.order(:date)%>
+<% destinations = []%>
+<% entries.each { |entry| destinations << entry.event.destination} %>
+<% destinations.uniq.each do |d|%>
   <%= d.name%>
   <% @itinerary.entries.order(:date).each do |entry|%>
     <% if Event.find(entry.event_id).destination_id == d.id%>
-    <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+      <% if entry.visited == false%>
+        <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+      <%= button_to "Visited", update_entry_path, method: :patch %>
+      <%else%>
+         <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+      <%end%>
     <%end%>
   <%end%>
 <%end%>
 </br>
 <%= button_to "Add Destinations", destinations_path, method: :get %>
 <hr/>
+
 
 

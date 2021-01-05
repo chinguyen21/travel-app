@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   resources :events
   resources :favorites
   resources :reviews
-  resources :user_destinations
+  resources :user_events
   resources :destinations
   resources :users
 
+  patch '/users/:id/itineraries/:id', to: "entries#update", as: "update_entry"
 
 
   root 'sessions#welcome', as: 'welcome'

@@ -14,6 +14,8 @@ class ItinerariesController < ApplicationController
     end
 
     def show
+        @user_event = UserEvent.new
+        @user = User.find(session[:id])
         if params[:user_id]
             if Itinerary.find_by(id: params[:id], user_id: params[:user_id]).nil?
                 flash[:alert] = ["Itinerary not found"]
