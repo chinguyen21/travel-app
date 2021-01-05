@@ -1,11 +1,16 @@
 <h1><%= @itinerary.name %></h1>
 <hr/>
 
-<p><% @itinerary.entries.each do |entry|%>
-  <ul>
-    <li type="square", style="font-style: italic"><%= entry.event.name%> in <%= link_to entry.event.destination.name, destination_path(entry.event.destination)%> on <%= entry.date%></li>
-  </ul>
-<% end %>
+<% @itinerary.destinations.uniq.each do |d|%>
+  <%= d.name%>
+  <% @itinerary.entries.order(:date).each do |entry|%>
+    <% if Event.find(entry.event_id).destination_id == d.id%>
+    <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+    <%end%>
+  <%end%>
+<%end%>
 </br>
-<%= button_to "Add Event", new_entry_path, method: :get %>
+<%= button_to "Add Destinations", destinations_path, method: :get %>
 <hr/>
+
+

@@ -3,9 +3,4 @@
 <hr/>
 <% @itineraries.each do |itinerary|%>
     <li><%= link_to itinerary.name, user_itinerary_path(itinerary.user, itinerary)%></li>
-    <p><% itinerary.entries.each do |entry|%>
-    <ul>
-        <li type="square", style="font-style: italic"><%= entry.event.name%> in <%= entry.event.destination.name%></li>
-    </ul>
-        <%end%>
 <% end %>

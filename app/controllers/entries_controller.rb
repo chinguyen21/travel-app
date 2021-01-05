@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
     before_action :not_logged_in
+    skip_before_action :verify_authenticity_token
     def new
         @entry = Entry.new
         @itineraries = User.find(session[:id]).itineraries
