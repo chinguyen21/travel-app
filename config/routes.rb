@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+
+  resources :destinations, only: [:show, :index] do
+    resources :events, only: [:show, :index]
+  end
+  resources :users
+
+  resources :users, only: [:show, :index] do
+    resources :itineraries, only: [:show, :index]
+  end
   resources :event_entries
   resources :entries
   resources :itineraries
@@ -8,6 +18,8 @@ Rails.application.routes.draw do
   resources :user_destinations
   resources :destinations
   resources :users
+
+
 
   root 'sessions#welcome', as: 'welcome'
   get '/login', to: 'sessions#new', as: 'login'
