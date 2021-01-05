@@ -1,13 +1,32 @@
 class ItinerariesController < ApplicationController
-    before_action :not_logged_in
+
 
     def index
-        @itineraries = Itinerary.all
+        if params[:user_id]
+            if User.find_by(id: params[:user_id]).nil?
+                redirect_to User.find(session[:id])
+            else
+                @itineraries = User.find(session[:id]).itineraries
+            end
+        else  
+             @itineraries = User.find(session[:id]).itineraries
+        end
     end
-    
+
     def show
+        if params[:user_id]
+            if Itinerary.find_by(id: params[:id], user_id: params[:user_id]).nil?
+                flash[:alert] = ["Itinerary not found"]
+                redirect_to user_itinerarys_path(User.find(params[:user_id]))
+            else
+                @itinerary = Itinerary.find_by(id: params[:id], user_id: params[:user_id])
+            end
+        else  
         @itinerary = Itinerary.find(params[:id])
+        end
     end
+
+
     def new
         @itinerary = Itinerary.new
     end

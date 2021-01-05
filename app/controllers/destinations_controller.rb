@@ -3,7 +3,10 @@ class DestinationsController < ApplicationController
     def index
         @destinations = Destination.all
     end
+
     def show
         @destination = Destination.find(params[:id])
+        @itineraries = User.find(session[:id]).itineraries
+        @entry = Entry.new
     end
 end

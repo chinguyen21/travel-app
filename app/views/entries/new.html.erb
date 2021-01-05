@@ -7,12 +7,12 @@
 <%end %>
 
 <%= form_for @entry do |f|%>
-<%= f.label :destination_id%>
-<%= f.collection_select :destination_id, Destination.all, :id, :name %><br>
+<%= f.label :event_id%>
+<%= f.collection_select :event_id, Event.all, :id, :name %><br><br>
 <%= f.label :itinerary_id%>
-<%= f.collection_select :itinerary_id, Itinerary.all, :id, :name %><br>
-<%= f.label :date%><br>
-<%= f.date_field :date%><br>
+<%= f.collection_select :itinerary_id, @itineraries, :id, :name %><br><br>
+<%= f.label :date%>
+<%= f.date_field :date%><br><br>
 <%= f.submit "Add Entry"%>
 
 <%end%>

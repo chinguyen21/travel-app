@@ -3,11 +3,16 @@
 <li><%= @destination.city %></li>
 <li><%= @destination.state %></li>
 <li><%= @destination.country %></li>
-<li><%= image_tag(@destination.picture_link, size: "300x300") %></li>
+<%= image_tag(@destination.picture_link, size: "300x300") %>
 
 <h3> All events</h3>
 
 <% @destination.events.each do |event|%>
-  <li><%= event.name%> - Price: <%= event.price%></li>
-  <%= button_to "Add to Itinerary", new_event_entry_path, method: :get%>
+  <li><%= link_to event.name, destination_event_path(@destination,event)%> - Price: <%= event.price%></li>
+  <%= form_for @entry do |f|%>
+  <%= f.hidden_field :event_id, value: event.id%>
+  <%= f.collection_select :itinerary_id, @itineraries, :id, :name %>
+  <%= f.date_field :date %>
+  <%= f.submit "Add to that itinerary"%>
+  <%end%>
 <%end%>

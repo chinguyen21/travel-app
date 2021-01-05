@@ -1,10 +1,22 @@
 <h1><%= @itinerary.name %></h1>
 <hr/>
 
-<% @itinerary.entries.each do |entry| %>
-<%= link_to entry.destination.name, destination_path(entry.destination) %>
+<p><% @itinerary.entries.each do |entry|%>
+  <ul>
+    <li type="square", style="font-style: italic"><%= entry.event.name%> in <%= link_to entry.event.destination.name, destination_path(entry.event.destination)%> on <%= entry.date%></li>
+  </ul>
 <% end %>
 </br>
-<%= button_to "Add Event", new_event_entry_path, method: :get %>
+<%= button_to "Add Event", new_entry_path, method: :get %>
 <hr/>
-<%= button_to "Add Destination", new_entry_path, method: :get %>
+
+
+
+Show Itinerary 
+
+  - Raul's birthday
+      + Entry1: Mc DonaO
+      + Entry2: star party at Mc Donald
+
+
+  - Tour trip

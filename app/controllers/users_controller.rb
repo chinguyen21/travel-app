@@ -2,15 +2,15 @@
 class UsersController < ApplicationController
   before_action :not_logged_in, only: :show
 
-  def show 
-    @user = User.find(params[:id])
+  
+  def show
+      @user = User.find(session[:id])
   end
 
   def new 
     @user = User.new
   end
   def create 
-    byebug
     @user = User.new(user_params)
     if @user.save
       session[:id] = @user.id

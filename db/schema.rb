@@ -23,16 +23,9 @@ ActiveRecord::Schema.define(version: 2021_01_04_211405) do
   end
 
   create_table "entries", force: :cascade do |t|
-    t.integer "destination_id"
+    t.integer "event_id"
     t.datetime "date"
     t.integer "itinerary_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "event_entries", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "entry_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

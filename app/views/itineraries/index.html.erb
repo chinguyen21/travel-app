@@ -1,7 +1,11 @@
 <h1>My Itineraries</h1>
+<%= link_to 'Search Destination', destinations_path %>
 <hr/>
 <% @itineraries.each do |itinerary|%>
-    <% if itinerary.user.id == session[:id]%>
-        <li><%= itinerary.name %></li>
-    <% end %>
+    <li><%= link_to itinerary.name, user_itinerary_path(itinerary.user, itinerary)%></li>
+    <p><% itinerary.entries.each do |entry|%>
+    <ul>
+        <li type="square", style="font-style: italic"><%= entry.event.name%> in <%= entry.event.destination.name%></li>
+    </ul>
+        <%end%>
 <% end %>
