@@ -1,4 +1,10 @@
 class ItinerariesController < ApplicationController
+    before_action :not_logged_in
+
+    def index
+        @itineraries = Itinerary.all
+    end
+    
     def show
         @itinerary = Itinerary.find(params[:id])
     end

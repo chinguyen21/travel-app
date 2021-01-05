@@ -1,0 +1,7 @@
+<h1>My Itineraries</h1>
+<hr/>
+<% @itineraries.each do |itinerary|%>
+    <% if itinerary.user.id == session[:id]%>
+        <li><%= itinerary.name %></li>
+    <% end %>
+<% end %>

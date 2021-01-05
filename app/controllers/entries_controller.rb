@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+    before_action :not_logged_in
     def new
         @entry = Entry.new
     end

@@ -1,5 +1,6 @@
 
 class UsersController < ApplicationController
+  before_action :not_logged_in, only: :show
 
   def show 
     @user = User.find(params[:id])
@@ -9,8 +10,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create 
+    byebug
     @user = User.new(user_params)
     if @user.save
+      session[:id] = @user.id
       redirect_to @user
     else  
       flash[:errors] = @user.errors.full_messages

@@ -9,8 +9,7 @@
 <%= form_for @itinerary do |f|%>
 <%= f.label :name%>
 <%= f.text_field :name%><br>
-<%= f.label :user_id%>
-<%= f.collection_select :user_id, User.all, :id, :name %><br>
+<%= f.hidden_field :user_id, value: session[:id]%>
 <%= f.submit "Create Itinerary"%>
 
 <%end%>

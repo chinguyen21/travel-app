@@ -1,5 +1,5 @@
 class EventEntriesController < ApplicationController
-
+    before_action :not_logged_in
     def new
         @event_entry = EventEntry.new
     end
