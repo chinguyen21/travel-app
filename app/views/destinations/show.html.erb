@@ -1,5 +1,12 @@
 <h1><%= @destination.name %></h1> 
 <hr/>
+<% if !User.find(session[:id]).favorites.any? {|favorite| favorite.destination == @destination }%>
+<%= form_for @favorite do |f| %>
+    <%= f.hidden_field :user_id, value: session[:id]%>
+    <%= f.hidden_field :destination_id, value: @destination.id%>
+    <%= f.submit "Add to Favorites"%>
+<% end %>
+<% end %>
 <li><%= @destination.city %>, <%= @destination.state %></li>
 <li><%= @destination.country %></li>
 <%= image_tag(@destination.picture_link, size: "300x300") %>
@@ -41,3 +48,28 @@
     <% end %>
   <% end %>
 <%end%>
+<hr/>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error|%>
+        <li style="color: red"><%= error%></li>
+    <%end%>
+<% end %>
+<h3>Write a Review:</h3>
+<%= form_for @review do |f|%>
+<%= f.label :rating %>
+<%= f.number_field :rating %>
+</br>
+<%= f.label :content %>
+<%= f.text_area :content %>
+</br>
+<%= f.hidden_field :user_id, value: session[:id] %>
+<%= f.hidden_field :destination_id, value: @destination.id %>
+<%= f.submit %>
+<%end%>
+</br>
+<h3>All Reviews</h3>
+<% @destination.reviews.order('id DESC').each do | review | %>
+    <%= review.user.name %>
+    <li>Rating: <%= review.rating %></li>
+    <li><%= review.content %></li>
+<% end %>

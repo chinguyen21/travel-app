@@ -12,4 +12,15 @@ class FavoritesController < ApplicationController
              @favorites = User.find(session[:id]).favorites
         end
     end
+
+    def create
+        # byebug
+        @favorite = Favorite.create(favorite_params)
+        redirect_to destination_path(@favorite.destination)
+    end
+
+    private
+    def favorite_params
+        params.require(:favorite).permit(:user_id, :destination_id)
+    end
 end

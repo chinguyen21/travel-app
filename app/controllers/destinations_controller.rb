@@ -11,5 +11,7 @@ class DestinationsController < ApplicationController
         @user = User.find(session[:id])
         @itinerary = Itinerary.new
         @itinerary.entries.build
+        @review = Review.new
+        @favorite = Favorite.new
     end
 end
