@@ -8,5 +8,8 @@ class DestinationsController < ApplicationController
         @destination = Destination.find(params[:id])
         @itineraries = User.find(session[:id]).itineraries
         @entry = Entry.new
+        @user = User.find(session[:id])
+        @itinerary = Itinerary.new
+        @itinerary.entries.build
     end
 end

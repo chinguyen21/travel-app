@@ -1,5 +1,5 @@
 class ItinerariesController < ApplicationController
-
+    before_action :not_logged_in
 
     def index
         if params[:user_id]
@@ -32,6 +32,7 @@ class ItinerariesController < ApplicationController
     end
 
     def create 
+        # byebug
         @itinerary = Itinerary.new(itinerary_params)
         if @itinerary.save
             redirect_to @itinerary 
@@ -41,8 +42,12 @@ class ItinerariesController < ApplicationController
         end
     end
 
+
     private
     def itinerary_params
-        params.require(:itinerary).permit(:name, :user_id)
+        params.require(:itinerary).permit(:name, :user_id, entries_attributes: [
+            :date,
+            :event_id
+        ])
     end
 end
