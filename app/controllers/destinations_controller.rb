@@ -21,10 +21,13 @@ class DestinationsController < ApplicationController
         elsif !params[:city].blank?
             @destinations = Destination.where(city: params[:city])
         elsif params[:popularity] == "Popularity" && !params[:limit].blank?
-            # byebug
             @destinations = Destination.most_popular_destinations.first(params[:limit].to_i)
         elsif params[:popularity] == "Popularity"
             @destinations = Destination.most_popular_destinations
+        elsif params[:popularity] == "Rating" && !params[:limit].blank?
+            @destinations = Destination.highest_lowest_rating_destinations.first(params[:limit].to_i)
+        elsif params[:popularity] == "Rating"
+            @destinations = Destination.highest_lowest_rating_destinations
         elsif params[:limit]
             @destinations = Destination.all.first(params[:limit].to_i)
         else

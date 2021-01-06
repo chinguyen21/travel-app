@@ -13,7 +13,7 @@
 </br>
 <%= form_tag("/destinations", method: "get") do %>
     <%= label_tag "Most Popular"%>
-    <%= select_tag "popularity", options_for_select(["Popularity"]), include_blank: true %>     
+    <%= select_tag "popularity", options_for_select(["Popularity", "Rating"]), include_blank: true %>     
     <%= label_tag "Limit" %>
     <%= select_tag "limit", options_for_select([1, 10, 25, 50]), include_blank: true %>     
     <%= submit_tag "Filter" %>
