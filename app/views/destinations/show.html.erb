@@ -12,16 +12,37 @@
 <%= image_tag(@destination.picture_link, size: "300x300") %>
 
 <h3> All events</h3>
-
+    <% if flash[:entry_errors] %>
+      <% flash[:entry_errors].each do |error|%>
+        <li style="color: red"><%= error%></li>
+      <%end%>
+    <% end %>
 <% @destination.events.each do |event|%>
   <li><%= link_to event.name, destination_event_path(@destination,event)%> - Price: <%= event.price%></li>
-  <% if User.find(session[:id]).itineraries.length > 0%>
-  <%= form_for @entry do |f|%>
-  <%= f.hidden_field :event_id, value: event.id%>
-  <%= f.collection_select :itinerary_id, @itineraries, :id, :name %>
-  <%= f.date_field :date %>
-  <%= f.submit "Add to Itinerary"%></br>
-  <%= form_for @itinerary do |f|%>
+
+  <% if @itineraries.length > 0%>
+    <%= form_for @entry do |f|%>
+    <%= f.hidden_field :event_id, value: event.id%>
+    <%= f.collection_select :itinerary_id, @itineraries, :id, :name %>
+    <%= f.date_field :date %>
+    <%= f.submit "Add to Itinerary"%></br>
+    <%end%>
+
+    <%= form_for @itinerary do |f|%>
+    <%= f.label "New Itinerary Name" %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :user_id, value: session[:id]%>
+      <%= f.fields_for :entries do |f| %>
+          <%= f.hidden_field :event_id, value: event.id%>
+          <%= f.label :date %>
+          <%= f.date_field :date %> 
+      <% end %>
+    <%= f.submit "Add this event to New Itinerary" %>
+    <% end %>
+
+  <%else%>
+
+    <%= form_for @itinerary do |f|%>
     <%= f.label "New Itinerary Name" %>
     <%= f.text_field :name %>
     <%= f.hidden_field :user_id, value: session[:id]%>
@@ -30,21 +51,7 @@
         <%= f.label :date %>
         <%= f.date_field :date %>
     <% end %>
-    <%= f.submit "Add to New Itinerary" %>
-    <% end %>
-  <%end%>
-  <%else%>
-  <%= form_for @itinerary do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.hidden_field :user_id, value: session[:id]%></br>
-    <%= f.label :entry %>
-    <%= f.fields_for :entries do |f| %>
-        <%= f.hidden_field :event_id, value: event.id%></br>
-        <%= f.label :date %></br>
-        <%= f.date_field :date %>
-    <% end %>
-    <%= f.submit "Create New Itinerary" %>
+    <%= f.submit "Add this event to New Itinerary" %>
     <% end %>
   <% end %>
 <%end%>
