@@ -1,5 +1,15 @@
 <h1>Destinations</h1>
+
 <hr/>
+<%= form_tag("/destinations", method: "get") do %>
+    <%= select_tag "country", options_for_select(@destinations), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+
 <% @destinations.each do | destination |%>
 <%= link_to destination.name, destination %><br>
 <% end %>
+
+<hr/>
+<%= link_to "Top 10 Popular Destination", most_popular_path%>
+

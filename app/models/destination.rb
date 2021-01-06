@@ -5,5 +5,5 @@ class Destination < ApplicationRecord
     has_many :entries, through: :events
     has_many :reviews
 
-
+    
 end
