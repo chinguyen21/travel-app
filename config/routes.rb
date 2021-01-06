@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :destinations
   resources :users
 
-  patch '/users/:id/itineraries/:id', to: "entries#update", as: "update_entry"
+  put '/users/:id/itineraries/:id', to: "entries#update", as: "update_entry"
   # post '/destinations/:id', to: "favorites#create", as: "create_favorite"
 
   root 'sessions#welcome', as: 'welcome'

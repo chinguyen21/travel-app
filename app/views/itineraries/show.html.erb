@@ -10,7 +10,7 @@
     <% if Event.find(entry.event_id).destination_id == d.id%>
       <% if entry.visited == false%>
         <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
-      <%= button_to "Visited", update_entry_path, method: :patch %>
+      <%= button_to "Visited", update_entry_path(entry), method: :put %>
       <%else%>
          <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
       <%end%>
@@ -20,6 +20,7 @@
 </br>
 <%= button_to "Add Destinations", destinations_path, method: :get %>
 <hr/>
+<%= button_to "Back to Homepage", user_path(@itinerary.user), method: :get %>
 
 
 

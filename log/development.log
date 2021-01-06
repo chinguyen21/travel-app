@@ -10014,3 +10014,1683 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 0.4ms | Allocations: 5626)
 
 
+Started GET "/users/1/itineraries" for ::1 at 2021-01-05 18:04:06 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (0.8ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 124.7ms | ActiveRecord: 1.8ms | Allocations: 7517)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 18:04:07 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (0.3ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.0ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 65.6ms | Allocations: 13656)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 72.4ms | ActiveRecord: 8.4ms | Allocations: 24305)
+
+
+Started PATCH "/users/3/itineraries/3" for ::1 at 2021-01-05 18:04:09 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"UDbbqET4yHQAqOCHt2KhSwP0bzTUc5hb7co+sHmXCLf2Kcs+qVSlVoJM04gqlp36bUBX1Kf8ae+S5+E474+1bw==", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[36mItinerary Load (0.3ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+No template found for EntriesController#update, rendering head :no_content
+Completed 204 No Content in 29ms (ActiveRecord: 1.3ms | Allocations: 7008)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 18:04:13 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.0ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 62.1ms | Allocations: 12153)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 71.3ms | ActiveRecord: 2.4ms | Allocations: 18600)
+
+
+Started PATCH "/users/3/itineraries/3" for ::1 at 2021-01-05 18:04:16 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"tIfgKSepQvy1XoQUdkVZJvTx0rMUOEokVR9dDal8u14SmPC/ygUv3je6txvrsWWXmkXqU2e3u5AqMoKFP2QGhg==", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+No template found for EntriesController#update, rendering head :no_content
+Completed 204 No Content in 19ms (ActiveRecord: 1.3ms | Allocations: 5282)
+
+
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 18:42:34 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (6.8ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.0ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 209.5ms | Allocations: 33506)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 364ms (Views: 234.7ms | ActiveRecord: 10.5ms | Allocations: 58648)
+
+
+Started PUT "/users/3/itineraries/3" for ::1 at 2021-01-05 18:42:37 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"cZyJvZyw+Re8g55cva6xVb5P7J474O5E5SYd88EeoORJfquH+w0zwYdK905xzNsumCpZkvMXTtN7GhupgQG9mw==", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[36mItinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:24:in `update'
+No template found for EntriesController#update, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 1.4ms | Allocations: 6991)
+
+
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItinerary Load (0.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mEntry Update (1.1ms)[0m  [1m[33mUPDATE "entries" SET "visited" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["visited", 1], ["updated_at", "2021-01-06 02:50:22.446592"], ["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 20:50:36 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.0ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 100.5ms | Allocations: 32965)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 184ms (Views: 121.5ms | ActiveRecord: 3.2ms | Allocations: 57335)
+
+
+Started PUT "/users/3/itineraries/3" for ::1 at 2021-01-05 20:51:30 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"e6SbFeXVP4X9sBM63BXkyoKfhU1LW2WQyKDb5Ocv1UhDRrkvgmj1U8Z5eigQd46xpPowQYOsxQdWnN2+pzDINw==", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+Completed 500 Internal Server Error in 192252ms (ActiveRecord: 1.0ms | Allocations: 179179)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update'
+app/controllers/entries_controller.rb:25:in `update'
+Started PUT "/users/3/itineraries/3" for ::1 at 2021-01-05 20:54:58 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"e6SbFeXVP4X9sBM63BXkyoKfhU1LW2WQyKDb5Ocv1UhDRrkvgmj1U8Z5eigQd46xpPowQYOsxQdWnN2+pzDINw==", "id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (byebug):1:in `update'
+Completed 500 Internal Server Error in 58563ms (ActiveRecord: 2.2ms | Allocations: 384809)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update'
+app/controllers/entries_controller.rb:25:in `update'
+Started PUT "/users/3/itineraries/3" for ::1 at 2021-01-05 20:56:11 -0600
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"e6SbFeXVP4X9sBM63BXkyoKfhU1LW2WQyKDb5Ocv1UhDRrkvgmj1U8Z5eigQd46xpPowQYOsxQdWnN2+pzDINw==", "id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (2.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mItinerary Load (8.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+Redirected to http://localhost:3000/users/3/itineraries/3
+Completed 302 Found in 1887ms (ActiveRecord: 71.3ms | Allocations: 10612241)
+
+
+Started GET "/users/3/itineraries/3" for ::1 at 2021-01-05 20:56:22 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (1.8ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:22:in `show'
+Completed 404 Not Found in 578ms (ActiveRecord: 27.3ms | Allocations: 2151044)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/itineraries_controller.rb:22:in `show'
+Started GET "/users/1/itineraries" for ::1 at 2021-01-05 20:59:22 -0600
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (1.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 95.5ms | Allocations: 532358)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 466ms (Views: 314.7ms | ActiveRecord: 5.6ms | Allocations: 2480037)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 20:59:24 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (2.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.9ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (1.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (2.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1650.1ms | Allocations: 8673337)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2005ms (Views: 1784.7ms | ActiveRecord: 39.3ms | Allocations: 10602741)
+
+
+Started PUT "/users/2/itineraries/2" for ::1 at 2021-01-05 20:59:29 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"ZjXM5OZI3/SXKY3z23z0n96n8ub+jG/oAsEzjtcrtjCiuvM9dRXmbjK318ltDE8cpzMTMMgaUrzFkjdkAKklFQ==", "id"=>"2"}
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (2.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mItinerary Load (12.9ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEntry Update (2.1ms)[0m  [1m[33mUPDATE "entries" SET "visited" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["visited", 1], ["updated_at", "2021-01-06 02:59:29.379623"], ["id", 2]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+Redirected to http://localhost:3000/users/2/itineraries/2
+Completed 302 Found in 486ms (ActiveRecord: 35.5ms | Allocations: 2183912)
+
+
+Started GET "/users/2/itineraries/2" for ::1 at 2021-01-05 20:59:29 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (1.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:22:in `show'
+Completed 500 Internal Server Error in 7534ms (ActiveRecord: 16.0ms | Allocations: 36002799)
+
+
+  
+NoMethodError (undefined method `user_itinerarys_path' for #<ItinerariesController:0x00007fd20be611a0>
+Did you mean?  user_itinerary_path
+               user_itineraries_path
+               user_itinerary_url):
+  
+app/controllers/itineraries_controller.rb:22:in `show'
+Started GET "/users/1/itineraries" for ::1 at 2021-01-05 21:00:23 -0600
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (7.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 218.1ms | Allocations: 1355564)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1136ms (Views: 371.7ms | ActiveRecord: 53.1ms | Allocations: 6980171)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:00:36 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (1.9ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (1.1ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (1.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (10.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (15.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (6.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 2218.3ms | Allocations: 10452135)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2749ms (Views: 2310.5ms | ActiveRecord: 122.3ms | Allocations: 13495635)
+
+
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mEntry Update (0.5ms)[0m  [1m[33mUPDATE "entries" SET "visited" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["visited", 0], ["updated_at", "2021-01-06 03:01:39.199638"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:01:45 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (1.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (2.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 810.3ms | Allocations: 4585789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1136ms (Views: 971.5ms | ActiveRecord: 20.9ms | Allocations: 6481605)
+
+
+Started PUT "/users/1/itineraries/1" for ::1 at 2021-01-05 21:01:52 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"dOuPh/+JQ/FDgXMs5gYcepkD+of8BZk4y1v9s09LykVMCa29mDSJJ3hIGj4qZHYBv2ZPizTyOa9VZ/vpD1TXOg==", "id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (7.9ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (6.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mItinerary Load (2.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEntry Update (1.8ms)[0m  [1m[33mUPDATE "entries" SET "visited" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["visited", 1], ["updated_at", "2021-01-06 03:01:52.675660"], ["id", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+Completed 404 Not Found in 377ms (ActiveRecord: 31.5ms | Allocations: 2353462)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/entries_controller.rb:26:in `update'
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:03:05 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/users/1/itineraries" for ::1 at 2021-01-05 21:03:13 -0600
+Started GET "/users/2" for ::1 at 2021-01-05 21:03:13 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (2.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (10.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (2.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1925.2ms | Allocations: 10425448)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3402ms (Views: 2022.7ms | ActiveRecord: 152.8ms | Allocations: 18117910)
+
+
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (12.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  Rendering users/show.html.erb within layouts/application
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 246.1ms | Allocations: 1439487)
+  Rendered users/show.html.erb within layouts/application (Duration: 178.9ms | Allocations: 968658)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 898ms (Views: 598.4ms | ActiveRecord: 8.5ms | Allocations: 5187096)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1752ms (Views: 654.3ms | ActiveRecord: 65.9ms | Allocations: 10356357)
+
+
+Started GET "/users/2" for ::1 at 2021-01-05 21:03:32 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 28.1ms | Allocations: 176991)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 291ms (Views: 196.1ms | ActiveRecord: 8.4ms | Allocations: 1684324)
+
+
+Started GET "/users/1/itineraries" for ::1 at 2021-01-05 21:03:34 -0600
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (2.1ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 51.3ms | Allocations: 342825)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 341ms (Views: 221.6ms | ActiveRecord: 11.2ms | Allocations: 2046053)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:03:36 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (10.0ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (7.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (8.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (8.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 2135.8ms | Allocations: 11933681)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2651ms (Views: 2226.9ms | ActiveRecord: 110.7ms | Allocations: 14979374)
+
+
+Started GET "/destinations" for ::1 at 2021-01-05 21:03:42 -0600
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (8.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:3
+  Rendered destinations/index.html.erb within layouts/application (Duration: 52.5ms | Allocations: 360448)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 279ms (Views: 210.1ms | ActiveRecord: 9.5ms | Allocations: 1839472)
+
+
+Started GET "/destinations/5" for ::1 at 2021-01-05 21:03:45 -0600
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (7.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:9:in `show'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:11:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (2.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (9.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 5]]
+  ↳ app/views/destinations/show.html.erb:16
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mItinerary Load (14.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:21
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 5]]
+  ↳ app/views/destinations/show.html.erb:71
+  Rendered destinations/show.html.erb within layouts/application (Duration: 924.8ms | Allocations: 5539515)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1609ms (Views: 1038.0ms | ActiveRecord: 65.0ms | Allocations: 10161904)
+
+
+Started POST "/entries" for ::1 at 2021-01-05 21:03:56 -0600
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"CkwkwF/LXWAUh9GftvibLkIRAd37meqf41z5/QBrfZDNhHwVp8pcWSUVS4DMZOK8fNBfmxxiA8CXxagndh3pVw==", "entry"=>{"event_id"=>"10", "itinerary_id"=>"3", "date"=>"2021-01-17"}, "commit"=>"Add to Itinerary", "itinerary"=>{"name"=>"", "user_id"=>"1", "entries_attributes"=>{"0"=>{"event_id"=>"10", "date"=>""}}}}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mItinerary Load (2.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mEntry Create (2.1ms)[0m  [1m[32mINSERT INTO "entries" ("event_id", "date", "itinerary_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 10], ["date", "2021-01-17 00:00:00"], ["itinerary_id", 3], ["created_at", "2021-01-06 03:03:56.854578"], ["updated_at", "2021-01-06 03:03:56.854578"]]
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:12:in `create'
+Redirected to http://localhost:3000/users/1/itineraries/3
+Completed 302 Found in 430ms (ActiveRecord: 20.8ms | Allocations: 2622309)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:03:57 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (9.8ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (1.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (8.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (10.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (7.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  [1m[36mCACHE Entry Load (6.8ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 939.0ms | Allocations: 5822421)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1510ms (Views: 1121.9ms | ActiveRecord: 59.6ms | Allocations: 8300867)
+
+
+Started PUT "/users/4/itineraries/4" for ::1 at 2021-01-05 21:04:12 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"U3QN9sAvv7y8f2v/IuE/cXT/H38gpKflgGTnPdz1tyZrli/Mp5J1aoe2Au3ug1UKUpqqc+hTB3IeWOFnnOqqWQ==", "id"=>"4"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (2.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mItinerary Load (8.8ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEntry Update (1.9ms)[0m  [1m[33mUPDATE "entries" SET "visited" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["visited", 1], ["updated_at", "2021-01-06 03:04:12.546106"], ["id", 4]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+Completed 500 Internal Server Error in 709ms (ActiveRecord: 30.1ms | Allocations: 3941350)
+
+
+  
+NoMethodError (undefined method `itinerary' for true:TrueClass):
+  
+app/controllers/entries_controller.rb:26:in `update'
+Started GET "/destinations" for ::1 at 2021-01-05 21:04:43 -0600
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started PUT "/users/4/itineraries/4" for ::1 at 2021-01-05 21:04:50 -0600
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (9.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:3
+  Rendered destinations/index.html.erb within layouts/application (Duration: 276.1ms | Allocations: 1585342)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1190ms (Views: 434.0ms | ActiveRecord: 46.9ms | Allocations: 6968517)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"U3QN9sAvv7y8f2v/IuE/cXT/H38gpKflgGTnPdz1tyZrli/Mp5J1aoe2Au3ug1UKUpqqc+hTB3IeWOFnnOqqWQ==", "id"=>"4"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (9.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mItinerary Load (2.3ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+Completed 500 Internal Server Error in 1769ms (ActiveRecord: 85.6ms | Allocations: 11853138)
+
+
+  
+NoMethodError (undefined method `itinerary' for true:TrueClass):
+  
+app/controllers/entries_controller.rb:26:in `update'
+Started PUT "/users/4/itineraries/4" for ::1 at 2021-01-05 21:06:02 -0600
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"U3QN9sAvv7y8f2v/IuE/cXT/H38gpKflgGTnPdz1tyZrli/Mp5J1aoe2Au3ug1UKUpqqc+hTB3IeWOFnnOqqWQ==", "id"=>"4"}
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (2.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mItinerary Load (1.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:27:in `update'
+Redirected to http://localhost:3000/users/1/itineraries/3
+Completed 302 Found in 1757ms (ActiveRecord: 67.9ms | Allocations: 10585825)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:06:11 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (1.9ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (2.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (7.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (8.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (6.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (7.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1435.1ms | Allocations: 8215975)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1977ms (Views: 1545.4ms | ActiveRecord: 82.4ms | Allocations: 11401099)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:07:48 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (3.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (8.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (7.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (1.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (6.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:23
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1134.6ms | Allocations: 6079892)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1589ms (Views: 1300.9ms | ActiveRecord: 46.1ms | Allocations: 8169219)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:08:02 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (9.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (1.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (8.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (7.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (6.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:23
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1093.6ms | Allocations: 6038750)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1520ms (Views: 1260.2ms | ActiveRecord: 51.7ms | Allocations: 8127326)
+
+
+Started GET "/users/1" for ::1 at 2021-01-05 21:08:06 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 39.1ms | Allocations: 208479)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 333ms (Views: 222.0ms | ActiveRecord: 2.5ms | Allocations: 1843668)
+
+
+Started GET "/favorites" for ::1 at 2021-01-05 21:08:13 -0600
+Processing by FavoritesController#index as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:12:in `index'
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/favorites/index.html.erb:3
+  [1m[36mDestination Load (1.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/favorites/index.html.erb:4
+  Rendered favorites/index.html.erb within layouts/application (Duration: 271.3ms | Allocations: 1804987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 558ms (Views: 421.0ms | ActiveRecord: 18.9ms | Allocations: 3715834)
+
+
+Started GET "/destinations" for ::1 at 2021-01-05 21:08:31 -0600
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (1.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:3
+  Rendered destinations/index.html.erb within layouts/application (Duration: 56.4ms | Allocations: 360441)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 268ms (Views: 207.5ms | ActiveRecord: 9.1ms | Allocations: 1840303)
+
+
+Started GET "/users/1/itineraries" for ::1 at 2021-01-05 21:09:22 -0600
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (2.0ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 76.8ms | Allocations: 494458)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 336ms (Views: 207.4ms | ActiveRecord: 17.3ms | Allocations: 2280985)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-05 21:09:26 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (7.9ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (1.7ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Entry Load (6.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:23
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 978.3ms | Allocations: 5972475)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1265ms (Views: 1110.0ms | ActiveRecord: 37.7ms | Allocations: 7868293)
+
+
+Started GET "/users/1" for ::1 at 2021-01-05 21:09:34 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 27.5ms | Allocations: 177002)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 268ms (Views: 183.5ms | ActiveRecord: 2.2ms | Allocations: 1678751)
+
+
+Started GET "/users/1/itineraries" for ::1 at 2021-01-06 09:08:20 -0600
+  [1m[35m (13.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ItinerariesController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:6:in `index'
+  [1m[36mCACHE User Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:9:in `index'
+  Rendering itineraries/index.html.erb within layouts/application
+  [1m[36mItinerary Load (5.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/itineraries/index.html.erb:4
+  Rendered itineraries/index.html.erb within layouts/application (Duration: 128.8ms | Allocations: 347010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 967ms (Views: 489.4ms | ActiveRecord: 12.8ms | Allocations: 2058984)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-06 09:08:23 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (2.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (2.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (13.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (3.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (6.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Entry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:23
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1403.4ms | Allocations: 5988107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2159ms (Views: 1579.1ms | ActiveRecord: 48.5ms | Allocations: 7890772)
+
+
+Started GET "/destinations" for ::1 at 2021-01-06 09:08:27 -0600
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (9.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:3
+  Rendered destinations/index.html.erb within layouts/application (Duration: 50.8ms | Allocations: 279206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 339ms (Views: 237.3ms | ActiveRecord: 11.3ms | Allocations: 1625443)
+
+
+Started GET "/destinations/4" for ::1 at 2021-01-06 09:08:30 -0600
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (3.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:8:in `show'
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:9:in `show'
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:11:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (3.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (9.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:16
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mItinerary Load (1.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mCACHE Itinerary Load (0.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:21
+  [1m[36mCACHE User Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mCACHE Itinerary Load (9.1ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:18
+  [1m[36mReview Load (4.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:71
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:72
+  [1m[36mCACHE User Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:72
+  Rendered destinations/show.html.erb within layouts/application (Duration: 1227.0ms | Allocations: 5707064)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2198ms (Views: 1387.1ms | ActiveRecord: 57.3ms | Allocations: 10822519)
+
+
+Started POST "/entries" for ::1 at 2021-01-06 09:08:39 -0600
+Processing by EntriesController#create as HTML
+  Parameters: {"authenticity_token"=>"90oR1STUe0MbyDKYf1MO56wYE0P1DlsqV8DiW+F6+kEwgkkA3NV6eipaqIcFz3d1ktlNBRL1snUjWbOBlwxuhg==", "entry"=>{"event_id"=>"7", "itinerary_id"=>"3", "date"=>"2021-01-23"}, "commit"=>"Add to Itinerary", "itinerary"=>{"name"=>"", "user_id"=>"1", "entries_attributes"=>{"0"=>{"event_id"=>"7", "date"=>""}}}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mItinerary Load (10.5ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mEntry Create (2.7ms)[0m  [1m[32mINSERT INTO "entries" ("event_id", "date", "itinerary_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["event_id", 7], ["date", "2021-01-23 00:00:00"], ["itinerary_id", 3], ["created_at", "2021-01-06 15:08:40.355196"], ["updated_at", "2021-01-06 15:08:40.355196"]]
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:11:in `create'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:12:in `create'
+Redirected to http://localhost:3000/users/1/itineraries/3
+Completed 302 Found in 526ms (ActiveRecord: 27.0ms | Allocations: 2343968)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-06 09:08:40 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (1.6ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (3.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (2.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (13.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:12
+  [1m[36mCACHE User Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:23
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1625.2ms | Allocations: 7291012)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2185ms (Views: 1810.8ms | ActiveRecord: 55.7ms | Allocations: 9772267)
+
+
+Started PUT "/users/5/itineraries/5" for ::1 at 2021-01-06 09:08:45 -0600
+Processing by EntriesController#update as HTML
+  Parameters: {"authenticity_token"=>"Ybr416vvrYiwkaSMa8tVcHLEnZ/Pt2Rtj73KAy5Q8hpZWNrtzFJnXotYzZ6nqT8LVKEokwdAxPoRgcxZbk/vZQ==", "id"=>"5"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (4.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:25:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mItinerary Load (3.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mEntry Update (2.2ms)[0m  [1m[33mUPDATE "entries" SET "visited" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["visited", 1], ["updated_at", "2021-01-06 15:08:46.321321"], ["id", 5]]
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:26:in `update'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:27:in `update'
+Redirected to http://localhost:3000/users/1/itineraries/3
+Completed 302 Found in 625ms (ActiveRecord: 20.1ms | Allocations: 2713495)
+
+
+Started GET "/users/1/itineraries/3" for ::1 at 2021-01-06 09:08:46 -0600
+Processing by ItinerariesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:18:in `show'
+  [1m[36mItinerary Load (11.4ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:20:in `show'
+  [1m[36mCACHE Itinerary Load (0.7ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."id" = ? AND "itineraries"."user_id" = ? LIMIT ?[0m  [["id", 3], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/itineraries_controller.rb:24:in `show'
+  Rendering itineraries/show.html.erb within layouts/application
+  [1m[36mEntry Load (11.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (10.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mDestination Load (1.8ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Destination Load (0.9ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:6
+  [1m[36mCACHE Entry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Entry Load (8.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE "entries"."itinerary_id" = ? ORDER BY "entries"."date" ASC[0m  [["itinerary_id", 3]]
+  ↳ app/views/itineraries/show.html.erb:9
+  [1m[36mCACHE Event Load (7.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (8.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE Event Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:10
+  [1m[36mCACHE Event Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:15
+  [1m[36mCACHE User Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/itineraries/show.html.erb:23
+  Rendered itineraries/show.html.erb within layouts/application (Duration: 1626.8ms | Allocations: 7147246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2092ms (Views: 1773.9ms | ActiveRecord: 87.3ms | Allocations: 9262615)
+
+
