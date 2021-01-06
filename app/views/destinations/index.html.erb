@@ -2,9 +2,15 @@
 
 <hr/>
 <%= form_tag("/destinations", method: "get") do %>
-    <%= select_tag "country", options_for_select(@destinations), include_blank: true %>
-    <%= submit_tag "Filter" %>
+  <%= label_tag "Country"%>
+  <%= select_tag "country", options_for_select(@countries), include_blank: true %>   
+  <%= label_tag "State"%>
+  <%= select_tag "state", options_for_select(@states), include_blank: true %>    
+  <%= label_tag "City"%> 
+  <%= select_tag "city", options_for_select(@cities), include_blank: true %>    
+  <%= submit_tag "Filter" %>
   <% end %>
+  
 
 <% @destinations.each do | destination |%>
 <%= link_to destination.name, destination %><br>

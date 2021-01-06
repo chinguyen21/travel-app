@@ -24,10 +24,7 @@ class EntriesController < ApplicationController
 
 
     def update 
-<<<<<<< HEAD
         # byebug
-=======
->>>>>>> bbc4c0fbbed0bb937c488a0d381137fb4e38a3ef
         @entry = Entry.find(params[:id])
         @entry.update(visited: true)
         redirect_to user_itinerary_path(@entry.itinerary.user, @entry.itinerary)

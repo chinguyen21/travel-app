@@ -12650,3 +12650,1134 @@ Completed 200 OK in 46ms (Views: 9.4ms | ActiveRecord: 1.5ms | Allocations: 1932
 >>>>>>> bbc4c0fbbed0bb937c488a0d381137fb4e38a3ef
 
 
+Started GET "/destinations" for ::1 at 2021-01-06 12:16:34 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 11568)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 56.2ms | ActiveRecord: 2.5ms | Allocations: 41755)
+
+
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:16:52 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1609)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 1.3ms | Allocations: 7236)
+
+
+Started GET "/destinations?event=9&commit=Filter" for ::1 at 2021-01-06 12:16:57 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"9", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1602)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.5ms | Allocations: 7230)
+
+
+Started GET "/destinations?event=10&commit=Filter" for ::1 at 2021-01-06 12:17:00 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"10", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1602)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 7225)
+
+
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:17:25 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.5ms | Allocations: 7214)
+
+
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:18:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE (event = params[:event])[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 7101)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.7ms | Allocations: 23182)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: near "[:event]": syntax error):
+     6:   <%= submit_tag "Filter" %>
+     7:   <% end %>
+     8: 
+     9: <% @destinations.each do | destination |%>
+    10: <%= link_to destination.name, destination %><br>
+    11: <% end %>
+    12: 
+  
+app/views/destinations/index.html.erb:9
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:19:41 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."event" = ?[0m  [["event", "8"]]
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 6785)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.3ms | Allocations: 23343)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: destinations.event):
+     6:   <%= submit_tag "Filter" %>
+     7:   <% end %>
+     8: 
+     9: <% @destinations.each do | destination |%>
+    10: <%= link_to destination.name, destination %><br>
+    11: <% end %>
+    12: 
+  
+app/views/destinations/index.html.erb:9
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:20:43 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."event" = ?[0m  [["event", "8"]]
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 6780)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.9ms | Allocations: 23210)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: destinations.event):
+     6:   <%= submit_tag "Filter" %>
+     7:   <% end %>
+     8: 
+     9: <% @destinations.each do | destination |%>
+    10: <%= link_to destination.name, destination %><br>
+    11: <% end %>
+    12: 
+  
+app/views/destinations/index.html.erb:9
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:21:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."event" = ?[0m  [["event", "8"]]
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 6827)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 2.9ms | Allocations: 23254)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: destinations.event):
+     6:   <%= submit_tag "Filter" %>
+     7:   <% end %>
+     8: 
+     9: <% @destinations.each do | destination |%>
+    10: <%= link_to destination.name, destination %><br>
+    11: <% end %>
+    12: 
+  
+app/views/destinations/index.html.erb:9
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:21:46 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."event" = ?[0m  [["event", "8"]]
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3161)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 5315)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: destinations.event):
+     6:   <%= submit_tag "Filter" %>
+     7:   <% end %>
+     8: 
+     9: <% @destinations.each do | destination |%>
+    10: <%= link_to destination.name, destination %><br>
+    11: <% end %>
+    12: 
+  
+app/views/destinations/index.html.erb:9
+Started GET "/destinations?event=8&commit=Filter" for ::1 at 2021-01-06 12:24:38 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"8", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2037)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.4ms | Allocations: 22132)
+
+
+  
+ActionView::Template::Error (undefined method `name' for "United States":String):
+    2: 
+    3: <hr/>
+    4: <%= form_tag("/destinations", method: "get") do %>
+    5:   <%= select_tag "country", options_from_collection_for_select(@countries, "id", "name"), include_blank: true %>    
+    6:   <%= submit_tag "Filter" %>
+    7:   <% end %>
+    8: 
+  
+app/views/destinations/index.html.erb:5
+app/views/destinations/index.html.erb:4
+Started GET "/destinations?event=10&commit=Filter" for ::1 at 2021-01-06 12:24:43 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"event"=>"10", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1832)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 3792)
+
+
+  
+ActionView::Template::Error (undefined method `name' for "United States":String):
+    2: 
+    3: <hr/>
+    4: <%= form_tag("/destinations", method: "get") do %>
+    5:   <%= select_tag "country", options_from_collection_for_select(@countries, "id", "name"), include_blank: true %>    
+    6:   <%= submit_tag "Filter" %>
+    7:   <% end %>
+    8: 
+  
+app/views/destinations/index.html.erb:5
+app/views/destinations/index.html.erb:4
+Started GET "/destinations" for ::1 at 2021-01-06 12:24:48 -0500
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1832)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 3789)
+
+
+  
+ActionView::Template::Error (undefined method `name' for "United States":String):
+    2: 
+    3: <hr/>
+    4: <%= form_tag("/destinations", method: "get") do %>
+    5:   <%= select_tag "country", options_from_collection_for_select(@countries, "id", "name"), include_blank: true %>    
+    6:   <%= submit_tag "Filter" %>
+    7:   <% end %>
+    8: 
+  
+app/views/destinations/index.html.erb:5
+app/views/destinations/index.html.erb:4
+Started GET "/destinations" for ::1 at 2021-01-06 12:25:00 -0500
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1141)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 3844)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 3..4)):
+    2: 
+    3: <hr/>
+    4: <%= form_tag("/destinations", method: "get") do %>
+    5:   <%= select_tag "country", options_from_collection_for_select(@countries), include_blank: true %>    
+    6:   <%= submit_tag "Filter" %>
+    7:   <% end %>
+    8: 
+  
+app/views/destinations/index.html.erb:5
+app/views/destinations/index.html.erb:4
+Started GET "/destinations" for ::1 at 2021-01-06 12:25:25 -0500
+Processing by DestinationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 25.7ms | ActiveRecord: 0.5ms | Allocations: 8257)
+
+
+Started GET "/destinations?country=United+States&commit=Filter" for ::1 at 2021-01-06 12:25:32 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.5ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:9
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.8ms | Allocations: 7157)
+
+
+Started GET "/destinations?country=United+States&commit=Filter" for ::1 at 2021-01-06 12:28:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1620)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.9ms | Allocations: 21699)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    3: <hr/>
+    4: <%= form_tag("/destinations", method: "get") do %>
+    5:   <%= select_tag "country", options_for_select(@countries), include_blank: true %>    
+    6:   <%= select_tag "city", options_for_select(@cities), include_blank: true %>    
+    7:   <%= submit_tag "Filter" %>
+    8:   <% end %>
+    9: 
+  
+app/views/destinations/index.html.erb:6
+app/views/destinations/index.html.erb:4
+Started GET "/destinations?country=United+States&commit=Filter" for ::1 at 2021-01-06 12:28:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1057)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 23.6ms | ActiveRecord: 2.2ms | Allocations: 25520)
+
+
+Started GET "/destinations?country=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:28:30 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 961)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 0.6ms | Allocations: 7732)
+
+
+Started GET "/destinations?country=&city=Big+Bend+National+Park&commit=Filter" for ::1 at 2021-01-06 12:28:32 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Big Bend National Park", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Big Bend National Park"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 13.1ms | ActiveRecord: 0.7ms | Allocations: 7707)
+
+
+Started GET "/destinations?country=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:28:37 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 7698)
+
+
+Started GET "/destinations?country=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:28:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 20.4ms | ActiveRecord: 1.7ms | Allocations: 25264)
+
+
+Started GET "/destinations?country=United+States&city=&commit=Filter" for ::1 at 2021-01-06 12:28:55 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 7755)
+
+
+Started GET "/destinations?country=United+States&city=&commit=Filter" for ::1 at 2021-01-06 12:30:43 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 960)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.5ms | Allocations: 7730)
+
+
+Started GET "/destinations?country=United+States&city=&commit=Filter" for ::1 at 2021-01-06 12:30:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1057)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 9.2ms | ActiveRecord: 1.8ms | Allocations: 25309)
+
+
+Started GET "/destinations?country=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:31:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 10.6ms | ActiveRecord: 2.0ms | Allocations: 25257)
+
+
+Started GET "/destinations?country=&city=Big+Bend+National+Park&commit=Filter" for ::1 at 2021-01-06 12:31:38 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Big Bend National Park", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Big Bend National Park"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 0.7ms | Allocations: 7690)
+
+
+Started GET "/destinations?country=&city=Big+Bend+National+Park&commit=Filter" for ::1 at 2021-01-06 12:33:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "city"=>"Big Bend National Park", "commit"=>"Filter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Big Bend National Park"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 28.1ms | ActiveRecord: 2.7ms | Allocations: 25249)
+
+
+Started GET "/destinations?country=United+States&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:33:06 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 981)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 12.0ms | ActiveRecord: 0.9ms | Allocations: 7755)
+
+
+Started GET "/destinations?country=United+States&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:35:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Fort Davis"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 33.3ms | ActiveRecord: 3.3ms | Allocations: 25259)
+
+
+Started GET "/destinations?country=United+States&city=Big+Bend+National+Park&commit=Filter" for ::1 at 2021-01-06 12:35:40 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"Big Bend National Park", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Big Bend National Park"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 31.3ms | ActiveRecord: 2.2ms | Allocations: 25245)
+
+
+Started GET "/destinations?country=United+States&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:35:44 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Fort Davis"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:10
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 12.3ms | ActiveRecord: 1.0ms | Allocations: 7706)
+
+
+Started GET "/destinations?country=United+States&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:37:32 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Fort Davis"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:12
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1430)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 14.0ms | ActiveRecord: 1.6ms | Allocations: 27013)
+
+
+Started GET "/destinations?country=United+States&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:44:14 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Fort Davis"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:14
+  Rendered destinations/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1523)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 26.3ms | ActiveRecord: 0.7ms | Allocations: 26345)
+
+
+Started GET "/destinations?country=United+States&state=Texas&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:44:21 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "state"=>"Texas", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Fort Davis"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:14
+  Rendered destinations/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 23.3ms | ActiveRecord: 0.9ms | Allocations: 8427)
+
+
+Started GET "/destinations?country=United+States&state=Texas&city=&commit=Filter" for ::1 at 2021-01-06 12:44:28 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "state"=>"Texas", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.7ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."state" = ? AND "destinations"."country" = ?[0m  [["state", "Texas"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:14
+  Rendered destinations/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1166)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 25.9ms | ActiveRecord: 1.0ms | Allocations: 8486)
+
+
+Started GET "/destinations?country=United+States&state=&city=&commit=Filter" for ::1 at 2021-01-06 12:44:33 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "state"=>"", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:14
+  Rendered destinations/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1153)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 23.9ms | ActiveRecord: 0.8ms | Allocations: 8467)
+
+
+Started GET "/destinations?country=&state=Texas&city=&commit=Filter" for ::1 at 2021-01-06 12:44:36 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"Texas", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:14
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 8323)
+
+
+Started GET "/destinations?country=&state=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:44:40 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:14
+  Rendered destinations/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 10.7ms | ActiveRecord: 0.9ms | Allocations: 8423)
+
+
+Started GET "/destinations/most_popular" for ::1 at 2021-01-06 12:50:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/frankienguyen/Desktop/FLAT_IRON /LABS/Week_7/Project/travel-app/app/controllers/entries_controller.rb:27: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/entries_controller.rb:27: syntax error, unexpected <<
+app/controllers/entries_controller.rb:27: syntax error, unexpected <<
+app/controllers/entries_controller.rb:27: syntax error, unexpected <<
+Started GET "/destinations/most_popular" for ::1 at 2021-01-06 12:51:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EntriesController#most_popular_destination as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" WHERE (visited = true)[0m
+  ↳ app/controllers/entries_controller.rb:21:in `map'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" INNER JOIN "events" ON "destinations"."id" = "events"."destination_id" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:21:in `block in most_popular_destination'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" INNER JOIN "events" ON "destinations"."id" = "events"."destination_id" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:21:in `block in most_popular_destination'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" INNER JOIN "events" ON "destinations"."id" = "events"."destination_id" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:21:in `block in most_popular_destination'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" INNER JOIN "events" ON "destinations"."id" = "events"."destination_id" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:21:in `block in most_popular_destination'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" INNER JOIN "events" ON "destinations"."id" = "events"."destination_id" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:21:in `block in most_popular_destination'
+  Rendering entries/most_popular_destination.html.erb within layouts/application
+  Rendered entries/most_popular_destination.html.erb within layouts/application (Duration: 1.1ms | Allocations: 225)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 124ms (Views: 15.1ms | ActiveRecord: 3.4ms | Allocations: 41418)
+
+
+Started GET "/destinations/4" for ::1 at 2021-01-06 12:51:10 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:26:in `show'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:27:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:29:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:20
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:23
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:78
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  Rendered destinations/show.html.erb within layouts/application (Duration: 44.7ms | Allocations: 20246)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 49.9ms | ActiveRecord: 3.4ms | Allocations: 44875)
+
+
+Started GET "/destinations?country=&state=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:51:57 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.4ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1508)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 17.2ms | ActiveRecord: 1.1ms | Allocations: 8986)
+
+
+Started GET "/destinations/4" for ::1 at 2021-01-06 12:52:01 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:26:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:27:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:29:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:20
+  [1m[36mItinerary Load (0.3ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:23
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:78
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  Rendered destinations/show.html.erb within layouts/application (Duration: 43.3ms | Allocations: 8756)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 58.8ms | ActiveRecord: 2.3ms | Allocations: 16122)
+
+
+Started GET "/destinations?country=&state=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:56:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1167)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 21.4ms | ActiveRecord: 2.1ms | Allocations: 25970)
+
+
+Started GET "/destinations?country=United+States&state=&city=&commit=Filter" for ::1 at 2021-01-06 12:59:31 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "state"=>"", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."country" = ?[0m  [["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1153)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.5ms | Allocations: 8469)
+
+
+Started GET "/destinations?country=&state=Texas&city=&commit=Filter" for ::1 at 2021-01-06 12:59:33 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"Texas", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."state" = ?[0m  [["state", "Texas"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1152)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 0.8ms | Allocations: 8471)
+
+
+Started GET "/destinations?country=&state=&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:59:35 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Fort Davis"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1086)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 8401)
+
+
+Started GET "/destinations?country=&state=&city=Big+Bend+National+Park&commit=Filter" for ::1 at 2021-01-06 12:59:37 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"", "city"=>"Big Bend National Park", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ?[0m  [["city", "Big Bend National Park"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1086)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 7.6ms | ActiveRecord: 0.6ms | Allocations: 8403)
+
+
+Started GET "/destinations?country=United+States&state=Texas&city=Fort+Davis&commit=Filter" for ::1 at 2021-01-06 12:59:44 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"United States", "state"=>"Texas", "city"=>"Fort Davis", "commit"=>"Filter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."city" = ? AND "destinations"."country" = ?[0m  [["city", "Fort Davis"], ["country", "United States"]]
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 0.6ms | Allocations: 8444)
+
+
+Started GET "/destinations?country=&state=&city=&commit=Filter" for ::1 at 2021-01-06 13:02:30 -0500
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"", "state"=>"", "city"=>"", "commit"=>"Filter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:5:in `map'
+  [1m[36mCACHE Destination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:6:in `map'
+  [1m[36mCACHE Destination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/controllers/destinations_controller.rb:7:in `map'
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mCACHE Destination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:15
+  Rendered destinations/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 28.2ms | ActiveRecord: 0.6ms | Allocations: 8328)
+
+
+Started GET "/destinations/4" for ::1 at 2021-01-06 13:02:55 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.6ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:29:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:30:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:32:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:20
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:23
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:78
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  Rendered destinations/show.html.erb within layouts/application (Duration: 24.1ms | Allocations: 20593)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 30.6ms | ActiveRecord: 6.0ms | Allocations: 51021)
+
+
+Started GET "/destinations/4" for ::1 at 2021-01-06 13:02:55 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:29:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:30:in `show'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:32:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:20
+  [1m[36mItinerary Load (0.1ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:23
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:78
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  Rendered destinations/show.html.erb within layouts/application (Duration: 23.6ms | Allocations: 8752)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 28.1ms | ActiveRecord: 1.3ms | Allocations: 16116)
+
+
+Started GET "/destinations/5" for ::1 at 2021-01-06 13:02:57 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:29:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:30:in `show'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:32:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 5]]
+  ↳ app/views/destinations/show.html.erb:20
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:23
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 5]]
+  ↳ app/views/destinations/show.html.erb:78
+  Rendered destinations/show.html.erb within layouts/application (Duration: 18.3ms | Allocations: 7667)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 24.5ms | ActiveRecord: 1.8ms | Allocations: 15026)
+
+
+Started GET "/destinations/4" for ::1 at 2021-01-06 13:02:58 -0500
+Processing by DestinationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:29:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:30:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/destinations_controller.rb:32:in `show'
+  Rendering destinations/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations" WHERE "destinations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:3
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."destination_id" = ?[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:20
+  [1m[36mItinerary Load (0.2ms)[0m  [1m[34mSELECT "itineraries".* FROM "itineraries" WHERE "itineraries"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/destinations/show.html.erb:23
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."destination_id" = ? ORDER BY id DESC[0m  [["destination_id", 4]]
+  ↳ app/views/destinations/show.html.erb:78
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/destinations/show.html.erb:79
+  Rendered destinations/show.html.erb within layouts/application (Duration: 43.4ms | Allocations: 8750)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 75ms (Views: 57.4ms | ActiveRecord: 2.2ms | Allocations: 16110)
+
+
