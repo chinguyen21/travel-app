@@ -1,7 +1,8 @@
 class DestinationsController < ApplicationController
     before_action :not_logged_in
+
     def index
-        
+        @destinations = Destination.all.sort_by &:name
         @countries = Destination.distinct.pluck(:country)
         @states = Destination.distinct.pluck(:state)
         @cities = Destination.distinct.pluck(:city)
@@ -19,7 +20,14 @@ class DestinationsController < ApplicationController
             @destinations = Destination.where(state: params[:state])
         elsif !params[:city].blank?
             @destinations = Destination.where(city: params[:city])
-        else  
+        elsif params[:popularity] == "Popularity" && !params[:limit].blank?
+            # byebug
+            @destinations = Destination.most_popular_destinations.first(params[:limit].to_i)
+        elsif params[:popularity] == "Popularity"
+            @destinations = Destination.most_popular_destinations
+        elsif params[:limit]
+            @destinations = Destination.all.first(params[:limit].to_i)
+        else
             @destinations = Destination.all
         end
 
