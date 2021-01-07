@@ -3,9 +3,9 @@ class DestinationsController < ApplicationController
 
     def index
         @destinations = Destination.all.sort_by &:name
-        @countries = Destination.distinct.pluck(:country)
-        @states = Destination.distinct.pluck(:state)
-        @cities = Destination.distinct.pluck(:city)
+        @countries = Destination.distinct.pluck(:country).sort
+        @states = Destination.distinct.pluck(:state).sort
+        @cities = Destination.distinct.pluck(:city).sort
         if !params[:country].blank? && !params[:state].blank? && !params[:city].blank?
             @destinations = Destination.where(city: params[:city], country: params[:country], city: params[:city])
         elsif !params[:country].blank? && !params[:state].blank? 
@@ -38,7 +38,7 @@ class DestinationsController < ApplicationController
 
     def show
         @destination = Destination.find(params[:id])
-        @itineraries = User.find(session[:id]).itineraries
+        @itineraries = User.find(session[:id]).itineraries.where('archived = false')
         @entry = Entry.new
         @user = User.find(session[:id])
         @itinerary = Itinerary.new

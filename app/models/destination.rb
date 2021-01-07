@@ -17,4 +17,10 @@ class Destination < ApplicationRecord
         h1.each {|key,value| h1[key] = value / h2[key].to_f}
         h1.sort_by {|key,value| -value}.map {|a| a[0]}
     end
+
+    def self.highest_rating
+        hash = Hash.new(0)
+        Review.all.each {|review| hash[review.destination] += review.rating}
+        hash
+    end
 end
