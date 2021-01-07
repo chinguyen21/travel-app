@@ -11,15 +11,23 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_01_06_234739) do
+ActiveRecord::Schema.define(version: 2021_01_06_232151) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "state_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "destinations", force: :cascade do |t|
     t.string "name"
-    t.string "city"
-    t.string "state"
-    t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture_link"
+    t.integer "city_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -61,6 +69,11 @@ ActiveRecord::Schema.define(version: 2021_01_06_234739) do
     t.integer "destination_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.integer "country_id"
   end
 
   create_table "user_events", force: :cascade do |t|
