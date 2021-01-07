@@ -4,3 +4,9 @@
 <% @itineraries.each do |itinerary|%>
     <li><%= link_to itinerary.name, user_itinerary_path(itinerary.user, itinerary)%></li>
 <% end %>
+<hr/>
+<%= link_to "Create New Itinerary", new_itinerary_path %>
+</br>
+<%= link_to "Archived Itineraries", archived_user_itineraries_path(session[:id]), method: :get %>
+</br></br>
+<%= button_to "Back to Homepage", user_path(session[:id]), method: :get %>

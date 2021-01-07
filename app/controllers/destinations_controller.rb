@@ -35,7 +35,7 @@ class DestinationsController < ApplicationController
 
     def show
         @destination = Destination.find(params[:id])
-        @itineraries = User.find(session[:id]).itineraries
+        @itineraries = User.find(session[:id]).itineraries.where('archived = false')
         @entry = Entry.new
         @user = User.find(session[:id])
         @itinerary = Itinerary.new
