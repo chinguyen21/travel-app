@@ -10,4 +10,10 @@ class Destination < ApplicationRecord
         Entry.where('visited = true').map {|entry| entry.destination}.each {|d| hash[d]+=1}
         hash.sort_by {|h,k| -k}.map {|a| a[0]}
     end
+
+    def self.highest_rating
+        hash = Hash.new(0)
+        Review.all.each {|review| hash[review.destination] += review.rating}
+        hash
+    end
 end

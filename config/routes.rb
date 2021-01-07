@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   resources :users
 
   resources :users, only: [:show, :index] do
-    resources :itineraries, only: [:show, :index]
+    resources :itineraries, except: [:new, :create, :edit, :update, :destroy] do 
+      collection do 
+        get 'archived'
+      end
+    end
     resources :favorites, only: :index
   end
   resources :event_entries
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
   resources :destinations
   resources :users
 
-  # post '/destinations/:id', to: "favorites#create", as: "create_favorite"
+  put '/users/:id/itineraries/:id', to: 'itineraries#update', as: 'update_itinerary'
 
   root 'sessions#welcome', as: 'welcome'
   get '/login', to: 'sessions#new', as: 'login'

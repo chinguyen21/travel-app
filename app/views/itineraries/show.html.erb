@@ -1,6 +1,6 @@
 <h1><%= @itinerary.name %></h1>
 <hr/>
-
+<% if @itinerary.archived == false %>
 <% entries = @itinerary.entries.order(:date)%>
 <% destinations = []%>
 <% entries.each { |entry| destinations << entry.event.destination} %>
@@ -10,9 +10,9 @@
     <% if Event.find(entry.event_id).destination_id == d.id%>
       <% if entry.visited == false%>
         <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
-      <%= form_for entry do |f| %> 
-      <%= f.submit "Visited"%>
-      <% end %>
+        <%= form_for entry do |f| %> 
+        <%= f.submit "Visited"%>
+        <% end %>
       <%else%> 
          <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
       <%end%>
@@ -20,9 +20,28 @@
   <%end%>
 <%end%>
 </br>
-<%= button_to "Add Destinations", destinations_path, method: :get %>
+<%= button_to "Add Destinations", destinations_path, method: :get %> 
+</br>
+<%= button_to "Archive Itinerary", update_itinerary_path(@itinerary), method: :put %>
 <hr/>
-<%= button_to "Back to Homepage", user_path(@itinerary.user), method: :get %>
-
-
+<%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
+<% else %>
+<% entries = @itinerary.entries.order(:date)%>
+<% destinations = []%>
+<% entries.each { |entry| destinations << entry.event.destination} %>
+<% destinations.uniq.each do |d|%>
+  <%= d.name%>
+  <% @itinerary.entries.order(:date).each do |entry|%>
+    <% if Event.find(entry.event_id).destination_id == d.id%>
+      <% if entry.visited == false %>
+        <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+      <%else%> 
+         <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>
+<hr/>
+<%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
+<% end %>
 

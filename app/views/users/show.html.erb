@@ -6,8 +6,8 @@
 </br>
 <%= link_to "My Favorites", favorites_path %>
 </br>
-<%= link_to "Create New Itinerary", new_itinerary_path %>
+<%= link_to "My Itineraries", user_itineraries_path(@user) %>
 </br>
-<%= link_to "View My Itineraries", user_itineraries_path(@user) %>
+<%= link_to "My Reviews" %>
 <hr/>
 <%= button_to "Logout", logout_path, method: :delete %>

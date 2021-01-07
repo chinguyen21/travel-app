@@ -6,7 +6,8 @@ class ItinerariesController < ApplicationController
             if User.find_by(id: params[:user_id]).nil?
                 redirect_to User.find(session[:id])
             else
-                @itineraries = User.find(session[:id]).itineraries
+                # byebug
+                @itineraries = User.find(session[:id]).itineraries.where('archived = false')
             end
         else  
              @itineraries = User.find(session[:id]).itineraries
@@ -14,7 +15,7 @@ class ItinerariesController < ApplicationController
     end
 
     def show
-        @user_event = UserEvent.new
+        # @user_event = UserEvent.new
         @user = User.find(session[:id])
         if params[:user_id]
             if Itinerary.find_by(id: params[:id], user_id: params[:user_id]).nil?
@@ -23,8 +24,8 @@ class ItinerariesController < ApplicationController
             else
                 @itinerary = Itinerary.find_by(id: params[:id], user_id: params[:user_id])
             end
-        else  
-        @itinerary = Itinerary.find(params[:id])
+        else 
+            @itinerary = Itinerary.find(params[:id])
         end
     end
 
@@ -40,6 +41,24 @@ class ItinerariesController < ApplicationController
         else
             flash[:errors] = @itinerary.errors.full_messages
             redirect_to new_itinerary_path
+        end
+    end
+
+    def update 
+        @itinerary = Itinerary.find(params[:id])
+        @itinerary.update(archived: true)
+        redirect_to archived_user_itineraries_path(@itinerary.user)
+    end
+
+    def archived
+        if params[:user_id]
+            if User.find_by(id: params[:user_id]).nil?
+                redirect_to User.find(session[:id])
+            else
+                @itineraries = User.find(session[:id]).itineraries.where('archived = true')
+            end
+        else  
+             @itineraries = User.find(session[:id]).itineraries
         end
     end
 
