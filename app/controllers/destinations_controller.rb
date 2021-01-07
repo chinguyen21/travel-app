@@ -2,32 +2,27 @@ class DestinationsController < ApplicationController
     before_action :not_logged_in
 
     def index
-        @destinations = Destination.all.sort_by &:name
-        @countries = Destination.distinct.pluck(:country).sort
-        @states = Destination.distinct.pluck(:state).sort
-        @cities = Destination.distinct.pluck(:city).sort
-        if !params[:country].blank? && !params[:state].blank? && !params[:city].blank?
-            @destinations = Destination.where(city: params[:city], country: params[:country], city: params[:city])
-        elsif !params[:country].blank? && !params[:state].blank? 
-            @destinations = Destination.where(state: params[:state], country: params[:country])
-        elsif !params[:country].blank? && !params[:city].blank? 
-            @destinations = Destination.where(city: params[:city], country: params[:country])
-        elsif !params[:state].blank? && !params[:city].blank? 
-            @destinations = Destination.where(city: params[:city], state: params[:state])
-        elsif !params[:country].blank?
-            @destinations = Destination.where(country: params[:country])
+        @user = User.find(session[:id])
+        @countries = Country.all
+        @states = State.all
+        if !params[:state].blank? && !params[:city].blank?
+            flash[:alert] = "Choose 1 category to filter at a time"
+            @destinations = Destination.all
+            redirect_to destinations_path
         elsif !params[:state].blank?
-            @destinations = Destination.where(state: params[:state])
+            @destinations = Destination.find_by_state(params[:state])
         elsif !params[:city].blank?
-            @destinations = Destination.where(city: params[:city])
-        elsif params[:popularity] == "Popularity" && !params[:limit].blank?
-            @destinations = Destination.most_popular_destinations.first(params[:limit].to_i)
-        elsif params[:popularity] == "Popularity"
+            @destinations = Destination.find_by_city(params[:city])
+        elsif params[:category] == "Popularity"
             @destinations = Destination.most_popular_destinations
-        elsif params[:popularity] == "Rating" && !params[:limit].blank?
-            @destinations = Destination.highest_lowest_rating_destinations.first(params[:limit].to_i)
-        elsif params[:popularity] == "Rating"
-            @destinations = Destination.highest_lowest_rating_destinations
+        elsif params[:category] == "Rating high to low" && !params[:limit].blank?
+            @a_destinations = Destination.highest_to_lowest_rating_destinations.first(params[:limit].to_i)
+        elsif params[:category] == "Rating high to low"
+            @a_destinations = Destination.highest_to_lowest_rating_destinations
+        elsif params[:category] == "Rating low to high" && !params[:limit].blank?
+            @a_destinations = Destination.lowest_to_highest_rating_destinations.first(params[:limit].to_i)
+        elsif params[:category] == "Rating low to high"
+            @a_destinations = Destination.lowest_to_highest_rating_destinations
         elsif params[:limit]
             @destinations = Destination.all.first(params[:limit].to_i)
         else
