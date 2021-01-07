@@ -3,8 +3,8 @@ class DestinationsController < ApplicationController
 
     def index
         @user = User.find(session[:id])
-        @countries = Country.all
-        @states = State.all
+        @countries = Country.all.sort_by(&:name)
+        @states = State.all.sort_by(&:name)
         if !params[:state].blank? && !params[:city].blank?
             flash[:alert] = "Choose 1 category to filter at a time"
             @destinations = Destination.all
