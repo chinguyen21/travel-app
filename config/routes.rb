@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       end
     end
     resources :favorites, only: :index
+    resources :reviews, only: [:index, :edit]
   end
   resources :event_entries
   resources :entries
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   resources :users
 
   put '/users/:id/itineraries/:id', to: 'itineraries#update', as: 'update_itinerary'
+  delete 'users/:id/reviews/:id', to: 'reviews#destroy', as: 'delete_review'
 
   root 'sessions#welcome', as: 'welcome'
   get '/login', to: 'sessions#new', as: 'login'

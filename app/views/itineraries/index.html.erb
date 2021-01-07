@@ -1,8 +1,12 @@
 <h1>My Itineraries</h1>
 <%= link_to 'Search Destination', destinations_path %>
 <hr/>
+<% if @itineraries.length > 0 %>
 <% @itineraries.each do |itinerary|%>
     <li><%= link_to itinerary.name, user_itinerary_path(itinerary.user, itinerary)%></li>
+<% end %>
+<% else %>
+<b>You don't have any itineraries!</b>
 <% end %>
 <hr/>
 <%= link_to "Create New Itinerary", new_itinerary_path %>
