@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     def welcome
+        render :layout => "layout"
     end
     
     def new
