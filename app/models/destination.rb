@@ -9,6 +9,7 @@ class Destination < ApplicationRecord
     has_one :country, through: :state
     accepts_nested_attributes_for :events, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
     validates :name, uniqueness: true
+    validates :name, :picture_link, presence: true
 
     def self.find_by_city(city_id)
         Destination.where(city_id: city_id)

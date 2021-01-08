@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   layout "filter_page"
   
   def show
-      @user = User.find(session[:id])
+    @user = User.find(session[:id])
+    render :layout => "my_account_page"
+      
+  end
+
+  def welcome 
+    render :layout => "welcome_page"
   end
 
   def new 
@@ -14,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to user_welcome_path(@user)
     else  
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path

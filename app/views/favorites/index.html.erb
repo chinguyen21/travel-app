@@ -3,6 +3,7 @@
 <% if @favorites.length > 0 %>
 <% @favorites.each do |favorite|%>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <%= link_to favorite.destination.name, destination_path(favorite.destination) %><br><br>
 <% end %>
 =======
@@ -14,3 +15,11 @@
 <hr/>
 <%= button_to "Back to Homepage", user_path(session[:id]), method: :get %>
 >>>>>>> abbed72cde292b80e9f8786bea7690366f63a3c9
+=======
+    <h3><%= link_to favorite.destination.name, destination_path(favorite.destination) %><br></h3>
+<% end %>
+<% else %>
+<h3>You don't have any favorites yet!</h3>
+<% end %>
+<hr/>
+>>>>>>> chi_nguyen

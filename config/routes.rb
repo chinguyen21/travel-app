@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   resources :users
 
   resources :users, only: [:show, :index] do
+<<<<<<< HEAD
     resources :itineraries, except: [:new, :create, :update, :destroy] do 
+=======
+        get 'welcome'
+    resources :itineraries, except: [:new, :create, :edit, :update, :destroy] do 
+>>>>>>> chi_nguyen
       collection do 
         get 'archived'
       end

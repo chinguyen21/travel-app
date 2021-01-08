@@ -14,36 +14,38 @@
         <%= f.submit "Visited"%>
         <% end %>
       <%else%> 
-         <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+         <h4 type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></h4>
       <%end%>
     <%end%>
   <%end%>
 <%end%>
-</br>
-<%= button_to "Add Destinations", destinations_path, method: :get %> 
+<br>
+<%= button_to "Archive this Itinerary", update_itinerary_path(@itinerary), method: :put %>
 <hr/>
+<<<<<<< HEAD
 <%= button_to "Edit Itinerary", edit_user_itinerary_path(@itinerary.user, @itinerary), method: :get %>
 </br>
 <%= button_to "Archive Itinerary", archive_itinerary_path(@itinerary), method: :put %>
 <hr/>
 <%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
+=======
+>>>>>>> chi_nguyen
 <% else %>
 <% entries = @itinerary.entries.order(:date)%>
 <% destinations = []%>
 <% entries.each { |entry| destinations << entry.event.destination} %>
 <% destinations.uniq.each do |d|%>
-  <%= d.name%>
+  <h2><%= d.name%></h2>
   <% @itinerary.entries.order(:date).each do |entry|%>
     <% if Event.find(entry.event_id).destination_id == d.id%>
       <% if entry.visited == false %>
-        <li type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+        <h4 type="square", style="font-style: italic"><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></h4>
       <%else%> 
-         <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+         <h4 type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></h4>
       <%end%>
     <%end%>
   <%end%>
 <%end%>
 <hr/>
-<%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
 <% end %>
 

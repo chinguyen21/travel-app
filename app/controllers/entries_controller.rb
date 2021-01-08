@@ -29,6 +29,7 @@ class EntriesController < ApplicationController
         redirect_to user_itinerary_path(@entry.itinerary.user, @entry.itinerary)
     end
 
+    
     def update 
         # byebug
         @entry = Entry.find(params[:id])

@@ -30,11 +30,11 @@
 <% if @a_destinations%>
   <% @a_destinations.each do |destination|%>
   
-    <li><%= link_to destination[0].name, destination[0] %> -  <%= destination[1]%></li><br>
+    <h3><%= link_to destination[0].name, destination[0] %> -  <%= destination[1].round(2)%><br></h3>
   <%end%>
 <%else%>
   <% @destinations.sort_by(&:name).each do | destination |%>
-  <%= link_to destination.name, destination %><br><br>
+  <h3><%= link_to destination.name, destination %></h3><br><br>
   
   <%end%>
 <% end %>
