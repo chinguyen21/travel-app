@@ -7,7 +7,7 @@ class Destination < ApplicationRecord
     belongs_to :city
     has_one :state, through: :city 
     has_one :country, through: :state
-
+    accepts_nested_attributes_for :events, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
     validates :name, uniqueness: true
 
     def self.find_by_city(city_id)

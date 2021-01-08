@@ -31,6 +31,17 @@ class DestinationsController < ApplicationController
         end
     end
 
+
+    def new 
+        @destination = Destination.new
+        @destination.events.build
+        @destination.events.build
+    end
+
+    def create
+
+    end
+    
     def show
         @destination = Destination.find(params[:id])
         @itineraries = User.find(session[:id]).itineraries.where('archived = false')
@@ -40,5 +51,13 @@ class DestinationsController < ApplicationController
         @itinerary.entries.build
         @review = Review.new
         @favorite = Favorite.new
+    end
+
+    private
+    def destination_params
+        params.require(:destination).permit(:name, :city_id, :picture_link, events_attributes: [
+            :name,
+            :price
+        ])
     end
 end

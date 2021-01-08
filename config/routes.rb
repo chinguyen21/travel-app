@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   get '/destinations/most_popular', to: "entries#most_popular_destination", as: "most_popular"
-
+  resources :destinations
   resources :destinations, only: [:show, :index] do
     resources :events, only: [:show, :index]
   end
@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :favorites
   resources :reviews
   resources :user_events
-  resources :destinations
   resources :users
 
   put '/users/:id/itineraries/:id', to: 'itineraries#update', as: 'update_itinerary'
