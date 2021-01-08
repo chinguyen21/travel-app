@@ -22,9 +22,9 @@
 </br>
 <%= button_to "Add Destinations", destinations_path, method: :get %> 
 <hr/>
-<%= button_to "Edit Itinerary", edit_itinerary_path(@itinerary), method: :get %>
+<%= button_to "Edit Itinerary", edit_user_itinerary_path(@itinerary.user, @itinerary), method: :get %>
 </br>
-<%= button_to "Archive Itinerary", update_itinerary_path(@itinerary), method: :put %>
+<%= button_to "Archive Itinerary", archive_itinerary_path(@itinerary), method: :put %>
 <hr/>
 <%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
 <% else %>
