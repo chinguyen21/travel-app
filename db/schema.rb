@@ -11,10 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_01_06_234739) do
-<<<<<<< HEAD
-
-=======
->>>>>>> dc9d974767f65ebfb839319ba8c3419754d4fa12
 
   create_table "cities", force: :cascade do |t|
     t.string "name"

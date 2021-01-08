@@ -1,4 +1,4 @@
-<h1>Login Page</h1>
+<h1 >Login Account</h1>
 <hr/>
 </br>
 <% if flash[:errors] %>
@@ -6,10 +6,10 @@
 <% end %>
 
 <%= form_for @user, :url => '/login' do | f | %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <h3>Email</h3>
+    <%= f.email_field :email %>
     </br></br>
-    <%= f.label :password %>
+    <h3>Password</h3>
     <%= f.password_field :password %>
     </br></br>
     <%= f.submit "Login" %>

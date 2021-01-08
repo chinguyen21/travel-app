@@ -17,7 +17,7 @@ City.destroy_all
 
 
 50.times {
-  Country.create(name: Faker::Address.country)
+  Country.create(name: Faker::Address.unique.country)
 }
 100.times {
   State.create(
@@ -27,16 +27,24 @@ City.destroy_all
 }
 200.times {
   City.create(
-    name: Faker::Address.city,
+    name: Faker::Address.unique.city,
     state: State.all[rand(1..80)]
     )
 }
 
-600.times {
+300.times {
   Destination.create(
     name: Faker::Restaurant.name, 
     city: City.all[rand(1..100)],
     picture_link: Faker::LoremFlickr.image(search_terms: ['restaurant'])
+  )
+}
+
+300.times {
+  Destination.create(
+    name: Faker::Mountain.name, 
+    city: City.all[rand(1..100)],
+    picture_link: Faker::LoremFlickr.image(search_terms: ['mountain'])
   )
 }
 
@@ -52,7 +60,7 @@ City.destroy_all
   Review.create(
     rating: rand(0..10),
     content: Faker::Restaurant.review,
-    user_id: 3,
+    user_id: 1,
     destination_id: Destination.all[rand(1..300)].id
   )
 }

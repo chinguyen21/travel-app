@@ -6,4 +6,5 @@ class Itinerary < ApplicationRecord
     validates :name, presence: true
 
     accepts_nested_attributes_for :entries
+
 end

@@ -1,0 +1,12 @@
+    <%= form_for @destination do |f|%>
+    <%= f.label "New Destination" %>
+    <%= f.text_field :name %>
+    <%= f.collection_select :city_id, City.all, :id, :name%>
+    <%= f.url_field :picture_link%>
+
+      <%= f.fields_for :events do |f| %>
+          <%= f.text_field :name %>
+          <%= f.number_field :price %>
+      <% end %>
+    <%= f.submit "Add Destination" %>
+    <% end %><br>
