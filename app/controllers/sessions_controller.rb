@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
     def welcome
-        render :layout => "layout"
+        render :layout => "homepage"
     end
     
     def new
         @user = User.new
+        render :layout => "filter_page"
     end
 
     def create
@@ -20,6 +21,6 @@ class SessionsController < ApplicationController
 
     def destroy
         session.clear
-        redirect_to login_path
+        redirect_to "/"
     end
 end

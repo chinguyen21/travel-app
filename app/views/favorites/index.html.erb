@@ -1,5 +1,5 @@
 <h1>My Favorites</h1>
 <hr/>
 <% @favorites.each do |favorite|%>
-    <li><%= link_to favorite.destination.name, destination_path(favorite.destination) %></li>
+    <%= link_to favorite.destination.name, destination_path(favorite.destination) %><br><br>
 <% end %>

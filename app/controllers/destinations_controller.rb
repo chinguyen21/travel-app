@@ -1,14 +1,15 @@
 class DestinationsController < ApplicationController
     before_action :not_logged_in
-
+    layout "filter_page"
     def index
         @user = User.find(session[:id])
-        @countries = Country.all.sort_by(&:name)
-        @states = State.all.sort_by(&:name)
+        @countries = Destination.all.map {|d| d.country}.uniq
+        @states = Destination.all.map {|d| d.state}.uniq
         if !params[:state].blank? && !params[:city].blank?
             flash[:alert] = "Choose 1 category to filter at a time"
             @destinations = Destination.all
             redirect_to destinations_path
+            
         elsif !params[:state].blank?
             @destinations = Destination.find_by_state(params[:state])
         elsif !params[:city].blank?
@@ -28,9 +29,19 @@ class DestinationsController < ApplicationController
         else
             @destinations = Destination.all
         end
-
     end
 
+
+    def new 
+        @destination = Destination.new
+        @destination.events.build
+        @destination.events.build
+    end
+
+    def create
+
+    end
+    
     def show
         @destination = Destination.find(params[:id])
         @itineraries = User.find(session[:id]).itineraries.where('archived = false')
@@ -40,5 +51,13 @@ class DestinationsController < ApplicationController
         @itinerary.entries.build
         @review = Review.new
         @favorite = Favorite.new
+    end
+
+    private
+    def destination_params
+        params.require(:destination).permit(:name, :city_id, :picture_link, events_attributes: [
+            :name,
+            :price
+        ])
     end
 end

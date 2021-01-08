@@ -1,12 +1,11 @@
 class ItinerariesController < ApplicationController
     before_action :not_logged_in
-
+    layout "nav_page"
     def index
         if params[:user_id]
             if User.find_by(id: params[:user_id]).nil?
                 redirect_to User.find(session[:id])
             else
-                # byebug
                 @itineraries = User.find(session[:id]).itineraries.where('archived = false')
             end
         else  
@@ -15,7 +14,6 @@ class ItinerariesController < ApplicationController
     end
 
     def show
-        # @user_event = UserEvent.new
         @user = User.find(session[:id])
         if params[:user_id]
             if Itinerary.find_by(id: params[:id], user_id: params[:user_id]).nil?
