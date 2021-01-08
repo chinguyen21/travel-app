@@ -2,9 +2,9 @@
 <hr/>
 <% if @favorites.length > 0 %>
 <% @favorites.each do |favorite|%>
-    <%= link_to favorite.destination.name, destination_path(favorite.destination) %><br>
+    <h3><%= link_to favorite.destination.name, destination_path(favorite.destination) %><br></h3>
 <% end %>
 <% else %>
-<b>You don't have any favorites yet!</b>
+<h3>You don't have any favorites yet!</h3>
 <% end %>
 <hr/>

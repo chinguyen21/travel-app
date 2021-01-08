@@ -1,13 +1,13 @@
 class DestinationsController < ApplicationController
     before_action :not_logged_in
-    layout "filter_page"
+    layout "destination_nav_page"
     def index
         @user = User.find(session[:id])
         @countries = Destination.all.map {|d| d.country}.uniq
         @states = Destination.all.map {|d| d.state}.uniq
         if !params[:state].blank? && !params[:city].blank?
             flash[:alert] = "Choose 1 category to filter at a time"
-            @destinations = Destination.all
+            @destinations = []
             redirect_to destinations_path
             
         elsif !params[:state].blank?
@@ -35,11 +35,16 @@ class DestinationsController < ApplicationController
     def new 
         @destination = Destination.new
         @destination.events.build
-        @destination.events.build
     end
 
     def create
-
+         @destination = Destination.new(destination_params)
+        if @destination.save
+            redirect_to @destination 
+        else
+            flash[:errors] = @destination.errors.full_messages
+            redirect_to new_destination_path
+        end
     end
     
     def show
@@ -51,6 +56,7 @@ class DestinationsController < ApplicationController
         @itinerary.entries.build
         @review = Review.new
         @favorite = Favorite.new
+        render :layout => "filter_page"
     end
 
     private

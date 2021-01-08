@@ -16,15 +16,14 @@
 <h3><%= @destination.country.name %></h3><br>
 <%= image_tag(@destination.picture_link, size: "300x300") %>
 <br>
-<h3> All events</h3>
+<h2> All events</h2>
     <% if flash[:entry_errors] %>
       <% flash[:entry_errors].each do |error|%>
         <li style="color: red"><%= error%></li>
       <%end%>
     <% end %>
 <% @destination.events.each do |event|%>
-  <%= link_to event.name, destination_event_path(@destination,event)%> - Price: <%= event.price%>
-  <br>
+  <h5><li><%= event.name%> - Price: <%= event.price%></li></h5>
   <br>
 
   <% if @itineraries.length > 0%>
