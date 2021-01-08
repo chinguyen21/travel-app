@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
->>>>>>> abbed72cde292b80e9f8786bea7690366f63a3c9
 <h1><%= @destination.name %></h1> 
 <br>
 <% if !User.find(session[:id]).favorites.any? {|favorite| favorite.destination == @destination }%>
@@ -107,10 +104,4 @@
 <<<<<<< HEAD
   </tbody>
 </table>
-<<<<<<< HEAD
-=======
-<hr/>
-<%= button_to "Back", destinations_path, method: :get %>
->>>>>>> abbed72cde292b80e9f8786bea7690366f63a3c9
-=======
->>>>>>> chi_nguyen
+
