@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :users, only: [:show, :index] do
+        get 'welcome'
     resources :itineraries, except: [:new, :create, :edit, :update, :destroy] do 
       collection do 
         get 'archived'

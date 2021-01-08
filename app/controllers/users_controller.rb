@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   layout "filter_page"
   
   def show
-      @user = User.find(session[:id])
+    @user = User.find(session[:id])
+    render :layout => "my_account_page"
+      
+  end
+
+  def welcome 
+    render :layout => "welcome_page"
   end
 
   def new 

@@ -15,4 +15,4 @@
 
 <%end%>
 <hr/>
-<%= button_to "Delete Review", delete_review_path(@review), method: :delete %>
+<%= button_to "Delete Review", delete_review_path(@review), method: :delete, data: {confirm: "Are you sure to delete this review?"} %>

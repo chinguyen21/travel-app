@@ -1,5 +1,10 @@
 <h1>My Favorites</h1>
 <hr/>
+<% if @favorites.length > 0 %>
 <% @favorites.each do |favorite|%>
-    <%= link_to favorite.destination.name, destination_path(favorite.destination) %><br><br>
+    <%= link_to favorite.destination.name, destination_path(favorite.destination) %><br>
 <% end %>
+<% else %>
+<b>You don't have any favorites yet!</b>
+<% end %>
+<hr/>

@@ -23,6 +23,7 @@ class EntriesController < ApplicationController
     end
 
 
+    
     def update 
         # byebug
         @entry = Entry.find(params[:id])

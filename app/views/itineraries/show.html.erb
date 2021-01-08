@@ -14,19 +14,14 @@
         <%= f.submit "Visited"%>
         <% end %>
       <%else%> 
-         <li type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></li>
+         <h4 type="square", style="font-style: italic"><del><%= entry.event.name%> on <%= entry.date.strftime("%A %B %d, %Y")%></h4>
       <%end%>
     <%end%>
   <%end%>
 <%end%>
 </br>
-<%= button_to "Add Destinations", destinations_path, method: :get %> 
+<%= button_to "Archive this Itinerary", update_itinerary_path(@itinerary), method: :put %>
 <hr/>
-<%= button_to "Edit Itinerary", edit_itinerary_path(@itinerary), method: :get %>
-</br>
-<%= button_to "Archive Itinerary", update_itinerary_path(@itinerary), method: :put %>
-<hr/>
-<%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
 <% else %>
 <% entries = @itinerary.entries.order(:date)%>
 <% destinations = []%>
@@ -44,6 +39,5 @@
   <%end%>
 <%end%>
 <hr/>
-<%= button_to "Back to Itineraries", user_itineraries_path(@itinerary.user), method: :get %>
 <% end %>
 
