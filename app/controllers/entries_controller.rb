@@ -22,6 +22,12 @@ class EntriesController < ApplicationController
         @destinations = hash.sort_by {|h,k| -k}.map {|a| a[0]}
     end
 
+    def change_date
+        # byebug
+        @entry = Entry.find(params[:id])
+        @entry.update(date: params[:date])
+        redirect_to user_itinerary_path(@entry.itinerary.user, @entry.itinerary)
+    end
 
     def update 
         # byebug

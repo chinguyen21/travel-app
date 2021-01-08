@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :users, only: [:show, :index] do
-    resources :itineraries, except: [:new, :create, :edit, :update, :destroy] do 
+    resources :itineraries, except: [:new, :create, :update, :destroy] do 
       collection do 
         get 'archived'
       end
@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   resources :user_events
   resources :users
 
-  put '/users/:id/itineraries/:id', to: 'itineraries#update', as: 'update_itinerary'
+  put '/users/:id/itineraries/:id/edit', to: 'entries#change_date', as: 'change_date'
+  put '/users/:id/itineraries/:id', to: 'itineraries#archive', as: 'archive_itinerary'
   delete 'users/:id/reviews/:id', to: 'reviews#destroy', as: 'delete_review'
 
   root 'sessions#welcome', as: 'welcome'

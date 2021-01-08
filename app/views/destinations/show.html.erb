@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+=======
+>>>>>>> abbed72cde292b80e9f8786bea7690366f63a3c9
 <h1><%= @destination.name %></h1> 
 <br>
 <% if !User.find(session[:id]).favorites.any? {|favorite| favorite.destination == @destination }%>
@@ -103,5 +106,10 @@
       <td><q><%= review.content %></q></td>
     </tr>
 <% end %>
+<<<<<<< HEAD
   </tbody>
 </table>
+=======
+<hr/>
+<%= button_to "Back", destinations_path, method: :get %>
+>>>>>>> abbed72cde292b80e9f8786bea7690366f63a3c9
