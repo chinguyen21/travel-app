@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :not_logged_in
-
+    layout "filter_page"
     def index
         if params[:user_id]
             if User.find_by(id: params[:user_id]).nil?

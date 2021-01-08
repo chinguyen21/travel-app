@@ -1,7 +1,7 @@
 
 class UsersController < ApplicationController
   before_action :not_logged_in, only: :show
-
+  layout "filter_page"
   
   def show
       @user = User.find(session[:id])

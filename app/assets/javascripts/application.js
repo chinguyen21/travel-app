@@ -1,5 +1,4 @@
 
-
 import 'bootstrap'
 require("@rails/uji").start()
 require("turbolinks").start()

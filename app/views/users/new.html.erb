@@ -9,15 +9,15 @@
 <%end %>
 
 <%= form_for @user do |f|%>
-<%= f.label :name%>
+<h3> Name </h3>
 <%= f.text_field :name%><br>
-<%= f.label :age%>
+<h3> Age </h3>
 <%= f.number_field :age%><br>
-<%= f.label :email%>
+<h3> Email </h3>
 <%= f.email_field :email%><br>
-<%= f.label :password%>
+<h3> Password </h3>
 <%= f.password_field :password%><br>
-<%= f.label :password_confirmation%>
+<h3> Password confirmation </h3>
 <%= f.password_field :password_confirmation%><br><br>
 <%= f.submit "Create account"%>
 

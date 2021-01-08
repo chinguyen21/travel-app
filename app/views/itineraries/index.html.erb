@@ -1,16 +1,12 @@
+
+
 <h1>My Itineraries</h1>
-<%= link_to 'Search Destination', destinations_path %>
 <hr/>
 <% if @itineraries.length > 0 %>
 <% @itineraries.each do |itinerary|%>
-    <li><%= link_to itinerary.name, user_itinerary_path(itinerary.user, itinerary)%></li>
+    <h3><%= link_to itinerary.name, user_itinerary_path(itinerary.user, itinerary)%><br></h3>
 <% end %>
 <% else %>
-<b>You don't have any itineraries!</b>
+<b style="color: yellow">You don't have any itineraries!</b>
 <% end %>
 <hr/>
-<%= link_to "Create New Itinerary", new_itinerary_path %>
-</br>
-<%= link_to "Archived Itineraries", archived_user_itineraries_path(session[:id]), method: :get %>
-</br></br>
-<%= button_to "Back to Homepage", user_path(session[:id]), method: :get %>
