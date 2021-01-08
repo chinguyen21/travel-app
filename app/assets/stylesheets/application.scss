@@ -10,10 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
  *= require_tree .
  *= require_self
- */
+
 /* /* */
 @import "bootstrap/scss/bootstrap";
 
@@ -61,7 +60,12 @@
 
 
   .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+		border-bottom: 1px solid #dddddd;
+		
+  }
+
+  .styled-table tbody tr td q{
+		width: 500px;
   }
 
   .styled-table tbody tr:last-of-type {
@@ -79,7 +83,13 @@
 	font-size: large;
 }
 
-
+.navbar-custom .navbar-brand .logo-text {
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+	font: 700 2.25rem/1.5rem "Montserrat", sans-serif;
+	color: rgb(51, 175, 169);
+	text-decoration: none;
+}
 body,
 html {
     width: 100%;

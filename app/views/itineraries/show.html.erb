@@ -5,7 +5,7 @@
 <% destinations = []%>
 <% entries.each { |entry| destinations << entry.event.destination} %>
 <% destinations.uniq.each do |d|%>
-  <h2><%= d.name%></h2>
+  <h2><%= link_to d.name, destination_path(d)%></h2>
   <% @itinerary.entries.order(:date).each do |entry|%>
     <% if Event.find(entry.event_id).destination_id == d.id%>
       <% if entry.visited == false%>

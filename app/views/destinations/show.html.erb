@@ -74,10 +74,10 @@
 <h2> Write a Review:</h2>
     <%= form_for @review do |f|%>
     <h4> Rating </h4>
-    <%= f.number_field :rating %>
+    <%= f.number_field :rating, in: 0.0..10.0 %>
 <br>
     <h4> Content </h4>
-    <%= f.text_area :content %><br>
+    <%= f.text_area :content, size: "30x5"%><br>
 <br>
 <%= f.hidden_field :user_id, value: session[:id] %>
 <%= f.hidden_field :destination_id, value: @destination.id %>
@@ -100,7 +100,7 @@
     <tr>
       <td><%= review.user.name %></td>
       <td><%= review.rating %></td>
-      <td><%= review.content %></td>
+      <td><q><%= review.content %></q></td>
     </tr>
 <% end %>
   </tbody>
