@@ -60,7 +60,12 @@ class ItinerariesController < ApplicationController
         end
     end
 
-
+    def archive 
+        @itinerary = Itinerary.find(params[:id])
+        @itinerary.update(archived: true)
+        redirect_to archived_user_itineraries_path(@itinerary.user)
+    end
+    
     private
     def itinerary_params
         params.require(:itinerary).permit(:name, :user_id, entries_attributes: [

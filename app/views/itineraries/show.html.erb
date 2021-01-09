@@ -20,7 +20,7 @@
   <%end%>
 <%end%>
 <br>
-<%= button_to "Archive this Itinerary", update_itinerary_path(@itinerary), method: :put %>
+<%= button_to "Archive this Itinerary", archive_itinerary_path(@itinerary), method: :put %>
 <hr/>
 <% else %>
 <% entries = @itinerary.entries.order(:date)%>
