@@ -27,7 +27,16 @@ class UsersController < ApplicationController
     end 
   end
 
+    
+    def edit
+        @user = User.new
+    end
 
+    def update
+        @user = User.find_by(session[:id])
+        @itinerary.update(archived: true)
+        redirect_to archived_user_itineraries_path(@itinerary.user)
+    end
   private 
   def user_params 
     params.require(:user).permit(:name, :age, :email, :password, :password_confirmation)
